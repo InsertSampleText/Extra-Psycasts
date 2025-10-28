@@ -1,0 +1,23 @@
+<ModMetaData>
+    <name>Extra Psycasts</name>
+    <author>InsertSampleText</author>
+    <packageId>insertsampletext.extrapsycasts</packageId>
+
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+
+    <modVersion>1</modVersion>
+    <description>Extra (hopefully) Vanilla friendly and (hopefully) balanced psycasts for utility and combat.</description>
+    <modDependencies>
+        <li>
+            <packageId>Ludeon.RimWorld.Royalty</packageId>
+            <displayName>Royalty</displayName>
+        </li>
+    </modDependencies>
+    <modDependenciesByVersion> </modDependenciesByVersion>
+    <loadAfter> </loadAfter>
+    <incompatibleWith>
+    </incompatibleWith>
+
+</ModMetaData>

@@ -1,0 +1,39 @@
+<Defs>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>EP_ColdSpacePinhole</defName>
+        <label>cold space pinhole</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <category>PsychicEmitter</category>
+        <altitudeLayer>MoteOverheadLow</altitudeLayer>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Mote/SpacePinhole</texPath>
+            <shaderType>MoteGlowDistorted</shaderType>
+            <color>(148,148,142)</color>
+            <drawSize>2</drawSize>
+            <shaderParameters>
+                <_DistortionTex>/Other/Ripples</_DistortionTex>
+                <_distortionIntensity>0.05</_distortionIntensity>
+                <_DistortionScale>0.2</_DistortionScale>
+                <_distortionScrollSpeed>(0.07, 0.07, 0.0)</_distortionScrollSpeed>
+            </shaderParameters>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>7</glowRadius>
+                <glowColor>(138,138,132)</glowColor>
+            </li>
+            <li Class="CompProperties_HeatPusher">
+                <compClass>CompHeatPusherPowered</compClass>
+                <heatPerSecond>-10</heatPerSecond>
+                <heatPushMinTemperature>-5</heatPushMinTemperature>
+            </li>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>300000</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>
