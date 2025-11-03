@@ -1,0 +1,190 @@
+<Defs>
+    <!--  WordOf displayOrder 0  -->
+    <!--  PsycastBase displayOrder 1  -->
+    <!--  PsycastBaseSkip displayOrder 2  -->
+
+
+    <!--Bolster
+    Immunity-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_BolsterImmunity</defName>
+        <label>bolster immunity</label>
+        <description>Psychically energize and reinforce the target's immune system, boosting their
+            immunity gain.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/BolsterImmunity</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>10</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost>
+            <Ability_Duration>420</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.25</warmupTime>
+            <range>27.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_BolsterImmunity</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!--Bolster
+    Clotting-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_BolsterClotting</defName>
+        <label>bolster clotting</label>
+        <description>Psychically boost the target body's ability to coagulate, stopping bleeding
+            sooner.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/BolsterClotting</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>10</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.6</Ability_PsyfocusCost>
+            <Ability_Duration>75</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>5.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_BolsterClotting</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!--Bolster
+    Healing-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_BolsterHealing</defName>
+        <label>bolster healing</label>
+        <description>Psychically boost the target body's healing system.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/BolsterHealing</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>10</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.18</Ability_PsyfocusCost>
+            <Ability_Duration>100</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>5.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_BolsterHealing</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!--Pain
+    Boost-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_PainBoost</defName>
+        <label>pain boost</label>
+        <description>Psychically boost the target body's healing system.</description>
+        <level>1</level>
+        <iconPath>UI/Abilities/PainBoost</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>8</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+            <Ability_Duration>120</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.25</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_PsychicPain</hediffDef>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+                <psychic>True</psychic>
+                <applicableToMechs>False</applicableToMechs>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!--Unburden-->
+
+    <AbilityDef ParentName="PsycastBase">
+        <defName>UnBurden</defName>
+        <label>unburden</label>
+        <description>Speed up the target for a short time by enhancing motor activity in the brain.</description>
+        <level>1</level>
+        <iconPath>UI/Abilities/UnBurden</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>8</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
+            <Ability_Duration>20</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.25</warmupTime>
+            <range>29.9</range>
+            <targetParams>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_UnBurden</hediffDef>
+                <psychic>True</psychic>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+</Defs>

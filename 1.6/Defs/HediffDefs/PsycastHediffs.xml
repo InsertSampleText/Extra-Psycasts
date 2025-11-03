@@ -1,0 +1,91 @@
+<Defs>
+
+    <!--Bolster Immunity-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_BolsterImmunity</defName>
+        <label>psychic immunity boost</label>
+        <description>Psychically-induced immune system boost.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Bolster
+    Clotting-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_BolsterClotting</defName>
+        <label>psychic clotting boost</label>
+        <description>Psychically-induced clotting boost.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <totalBleedFactor>0.6</totalBleedFactor>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Bolster
+    Healing-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_BolsterHealing</defName>
+        <label>psychic healing boost</label>
+        <description>Psychically-induced healing boost.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <naturalHealingFactor>1.5</naturalHealingFactor>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Pain
+    boost-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_PsychicPain</defName>
+        <label>psychic pain boost</label>
+        <description>Psychically-induced increased pain sensitivity.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <painFactor>1.5</painFactor>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Unburden-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_UnBurden</defName>
+        <label>psychic unburden</label>
+        <description>Psychically-induced ease in locomotion.</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Word
+    of Happiness-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Happiness</defName>
+        <label>psychic happiness</label>
+        <description>Psychically-induced feelings of happiness..</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

@@ -1,0 +1,33 @@
+<Defs>
+
+    <!--Word of Happiness-->
+    <AbilityDef ParentName="WordOfBase">
+        <defName>EP_WordOfHappiness</defName>
+        <label>word of happiness</label>
+        <description>Speak happy, calming words to someone while using psychic suggestion to implant
+            a joyfuzz loop in their mind. The joyfuzz will suppress uncomfortable thoughts and
+            sensations in the target to improve mood. This has the side-effect of dulling sensation
+            and decision-making, which reduces consciousness.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/WordOfHappiness</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.55</Ability_PsyfocusCost>
+            <Ability_Duration>2400</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicHappiness</interactionDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+</Defs>

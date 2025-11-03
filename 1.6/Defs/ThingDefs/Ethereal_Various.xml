@@ -1,4 +1,6 @@
 <Defs>
+
+    <!--cold pinhole-->
     <ThingDef ParentName="EtherealThingBase">
         <defName>EP_ColdSpacePinhole</defName>
         <label>cold space pinhole</label>
@@ -36,4 +38,7 @@
             </li>
         </comps>
     </ThingDef>
+
+
+
 </Defs>

@@ -1,0 +1,18 @@
+<Defs>
+ 
+    <ThoughtDef>
+        <defName>EP_Happiness</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic happiness</label>
+                <description>I feel happy, and that I can enjoy myself more.</description>
+                <baseMoodEffect>10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+    
+</Defs>
