@@ -6,7 +6,7 @@
         <label>psychic happiness</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
-        <symbol>Mote\SpeechThings\WordOfHappinessConvo</symbol>
+        <symbol>Things/Mote/SpeechThings/WordOfHappinessConvo</symbol>
         <logRulesInitiator>
             <rulesStrings>
                 <li>r_logentry->[INITIATOR_nameDef] psychically gave joy to [RECIPIENT_nameDef].</li>

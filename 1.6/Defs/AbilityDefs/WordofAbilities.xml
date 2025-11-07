@@ -4,10 +4,7 @@
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfHappiness</defName>
         <label>word of happiness</label>
-        <description>Speak happy, calming words to someone while using psychic suggestion to implant
-            a joyfuzz loop in their mind. The joyfuzz will suppress uncomfortable thoughts and
-            sensations in the target to improve mood. This has the side-effect of dulling sensation
-            and decision-making, which reduces consciousness.</description>
+        <description>Speak words of happiness and enjoyment to someone, creating a sense of joy within them and reducing their need to have fun to be happy.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfHappiness</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -27,7 +24,19 @@
             <li Class="CompProperties_AbilitySocialInteraction">
                 <interactionDef>EP_PsychicHappiness</interactionDef>
             </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Happiness</hediffDef>
+                <psychic>True</psychic>
+                <onlyBrain>True</onlyBrain>
+                <applicableToMechs>False</applicableToMechs>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
         </comps>
     </AbilityDef>
+
+
+
+
 
 </Defs>

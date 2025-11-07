@@ -62,7 +62,7 @@
         <defName>EP_UnBurden</defName>
         <label>psychic unburden</label>
         <description>Psychically-induced ease in locomotion.</description>
-        <isBad>true</isBad>
+        <isBad>false</isBad>
         <stages>
             <li>
                 <capMods>
@@ -80,10 +80,72 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>EP_Happiness</defName>
         <label>psychic happiness</label>
-        <description>Psychically-induced feelings of happiness..</description>
+        <description>Psychically-induced feelings of happiness. Reduces the need for recreation.</description>
         <isBad>false</isBad>
         <stages>
             <li>
+                <statFactors>
+                    <JoyFallRateFactor>0.5</JoyFallRateFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Bleed
+    Wounds-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_BleedWounds</defName>
+        <label>psychic wound bleed</label>
+        <description>The ability to clot wounds is psychically weakened, leading to more bleeding.</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <totalBleedFactor>1.5</totalBleedFactor>
+            </li>
+        </stages>
+    </HediffDef>
+
+
+    <!--Grav
+    Field-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_GravField</defName>
+        <label>psychic low grav field</label>
+        <description>A thin skipgate that surrounds the target and creates a slightly lowers
+            gravity, allowing for slightly faster movement due to being a slightly lighter weight.</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>.15</offset>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <CrawlSpeed>0.15</CrawlSpeed>
+                    <TrapSpringChance>-0.5</TrapSpringChance>
+                    <CarryingCapacity>0.1</CarryingCapacity>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+
+    <!--Temp
+    Barrier-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_TempBarrier</defName>
+        <label>psychic temperature barrier</label>
+        <description>A thin skipgate that surrounds the target and creates a layer of insulation with air 
+            that protects against high and low temperatures.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ComfyTemperatureMin>-32</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>32</ComfyTemperatureMax>
+                </statOffsets>
             </li>
         </stages>
     </HediffDef>

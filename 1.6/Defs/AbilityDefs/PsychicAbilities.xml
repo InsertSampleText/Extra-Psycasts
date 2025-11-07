@@ -54,7 +54,7 @@
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>10</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.6</Ability_PsyfocusCost>
+            <Ability_PsyfocusCost>0.3</Ability_PsyfocusCost>
             <Ability_Duration>75</Ability_Duration>
         </statBases>
         <verbProperties>
@@ -186,5 +186,43 @@
         </comps>
     </AbilityDef>
 
+    <!--Bleed Wounds-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_BleedWounds</defName>
+        <label>bleed wounds</label>
+        <description>Psychically hinder the target body's ability to coagulate, increasing blood loss.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/BleedWounds</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>10</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
+            <Ability_Duration>30</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>20.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_BleedWounds</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+
+    
 
 </Defs>

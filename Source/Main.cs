@@ -12,6 +12,7 @@ using UnityEngine;
 namespace ExtraPsycasts
 {
 
+    /*
     //Watering pinhole
     public class CompProperties_EP_FertilityBoost : CompProperties
     {
@@ -28,10 +29,11 @@ namespace ExtraPsycasts
     public class Comp_EP_FertilityBoost : ThingComp
     {
         
-        
+
 
     }
 
-
+    */
+    
     
 }

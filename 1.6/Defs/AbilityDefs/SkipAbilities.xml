@@ -80,6 +80,35 @@
                 <canTargetBuildings>false</canTargetBuildings>
             </targetParams>
         </verbProperties>
+
+
+    </AbilityDef>
+
+    <!--GravField-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_GravField</defName>
+        <label>grav field</label>
+        <description>Open a thin spherical skipgate around the target. The gate skips away a small
+            amount of gravitons, making the target lighter.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/GravField</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.15</Ability_PsyfocusCost>
+            <Ability_Duration>120</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityEffecterOnTarget">
                 <effecterDef>Skip_Exit</effecterDef>
@@ -95,8 +124,189 @@
                 <sound>Psycast_Skip_Exit</sound>
                 <preCastTicks>5</preCastTicks>
             </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_GravField</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
         </comps>
 
     </AbilityDef>
+
+    <!--Rock
+    Throw-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_RockThrow</defName>
+        <label>rock throw</label>
+        <description>Use skipgates to gather small rocks and launch them with gravitons like a
+            shotgun blast.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/RockThrow</iconPath>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.9</warmupTime>
+            <range>13.9</range>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>SkippedRocks</projectileDef>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+
+    <!--Temperature
+    Shield-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_TempBarrier</defName>
+        <label>temperature barrier</label>
+        <description>Create a thin skipgate barrier that creates airflow around the target that
+            helps insulate them, protecting against high and low temperatures.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/TemperatureShield</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.15</Ability_PsyfocusCost>
+            <Ability_Duration>120</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <scale>0.2</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_TempBarrier</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+
+        </comps>
+    </AbilityDef>
+
+    <!--Fireball-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_Fireball</defName>
+        <label>fireball</label>
+        <description>Skip a significant amount of combustible, fine, dust. Ignite the dust through
+            compressed air and start a small thermobaric explosion.</description>
+        <level>3</level>
+        <iconPath>UI/Abilities/Fireball</iconPath>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>15</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <range>13.9</range>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_DustBomb</thingDef>
+                <allowOnBuildings>False</allowOnBuildings>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>5</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+
+    <!--Ignite-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_Spark</defName>
+        <label>spark</label>
+        <description>A small amount of air and dust are gathered in a cylindrical skipgate then compressed. The rapid and adiabatic compression causes ignition. Lights fires on flammable things.</description>
+        <level>1</level>
+        <iconPath>UI/Abilities/Fireball</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.07</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.5</warmupTime>
+            <range>6.9</range>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_Spark</thingDef>
+                <allowOnBuildings>true</allowOnBuildings>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>5</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
 
 </Defs>
