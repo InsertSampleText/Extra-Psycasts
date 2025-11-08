@@ -150,4 +150,55 @@
         </stages>
     </HediffDef>
 
+
+    <!--Word
+    of Misery-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Misery</defName>
+        <label>psychic misery</label>
+        <description>Psychically-induced feelings of misery. Increases mental break threshold.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+                    <MentalBreakThreshold>1.15</MentalBreakThreshold>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Word
+    of Resolve-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Resolve</defName>
+        <label>psychic resolve</label>
+        <description>Psychically-enhanced resolve. Decreases mental break threshold and global certaintity loss factor.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+                    <MentalBreakThreshold>.5</MentalBreakThreshold>
+                    <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.5</CertaintyLossFactor>
+                    <PainShockThreshold>0.2</PainShockThreshold>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Word
+    of Doubt-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Doubt</defName>
+        <label>psychic doubt</label>
+        <description>Psychically-induced doubt. Increases global certaintity loss factor.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+                    <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">1.5</CertaintyLossFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
 </Defs>

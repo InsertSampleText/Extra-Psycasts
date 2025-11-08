@@ -74,6 +74,7 @@
             <requireLineOfSight>true</requireLineOfSight>
             <soundCast>Psycast_Skip_Exit</soundCast>
             <soundLanding>Longjump_Land</soundLanding>
+            <flyWithCarriedThing>true</flyWithCarriedThing>
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>false</canTargetPawns>
@@ -147,7 +148,7 @@
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>5</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+            <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
             <warmupTime>0.9</warmupTime>
@@ -156,6 +157,7 @@
                 <canTargetLocations>false</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
+                <canTargetAnimals>true</canTargetAnimals>
             </targetParams>
         </verbProperties>
         <comps>
@@ -222,20 +224,22 @@
         <defName>EP_Fireball</defName>
         <label>fireball</label>
         <description>Skip a significant amount of combustible, fine, dust. Ignite the dust through
-            compressed air and start a small thermobaric explosion.</description>
+            compressed air and start a thermobaric explosion.</description>
         <level>3</level>
         <iconPath>UI/Abilities/Fireball</iconPath>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
-            <Ability_EntropyGain>15</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+            <Ability_EntropyGain>13</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
-            <warmupTime>2</warmupTime>
+            <warmupTime>1.5</warmupTime>
             <range>13.9</range>
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
+                <canTargetMechanoids>true</canTargetMechanoids>
+                <canTargetAnimals>True</canTargetAnimals>
             </targetParams>
         </verbProperties>
         <comps>
@@ -263,17 +267,17 @@
     </AbilityDef>
 
 
-    <!--Ignite-->
+    <!--Spark-->
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_Spark</defName>
         <label>spark</label>
         <description>A small amount of air and dust are gathered in a cylindrical skipgate then compressed. The rapid and adiabatic compression causes ignition. Lights fires on flammable things.</description>
         <level>1</level>
-        <iconPath>UI/Abilities/Fireball</iconPath>
+        <iconPath>UI/Abilities/Spark</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
-            <Ability_EntropyGain>5</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.07</Ability_PsyfocusCost>
+            <Ability_EntropyGain>2.5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
             <warmupTime>.5</warmupTime>
@@ -307,6 +311,41 @@
         </comps>
 
     </AbilityDef>
+
+
+
+    <!--Chunk
+    Throw-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_ChunkThrow</defName>
+        <label>chunk throw</label>
+        <description>Use skipgates to gather a chunk and gravitons and launch it like a canonball.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/ChunkThrow</iconPath>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>12.5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.9</warmupTime>
+            <range>13.9</range>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>SkippedChunk</projectileDef>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+
 
 
 </Defs>

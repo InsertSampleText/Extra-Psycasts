@@ -1,6 +1,6 @@
 <Defs>
 
-
+    <!--Word of Happiness-->
     <InteractionDef>
         <defName>EP_PsychicHappiness</defName>
         <label>psychic happiness</label>
@@ -13,5 +13,64 @@
             </rulesStrings>
         </logRulesInitiator>
     </InteractionDef>
+
+    <!--Word of Misery-->
+    <InteractionDef>
+        <defName>EP_PsychicMisery</defName>
+        <label>psychic misery</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechThings/WordOfMiseryConvo</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] psychically burdened the mood of [RECIPIENT_nameDef].</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+    <!--Word of Resolve-->
+    <InteractionDef>
+        <defName>EP_PsychicResolve</defName>
+        <label>psychic resolve</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechThings/WordOfResolveConvo</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] psychically strengthened the resolve of [RECIPIENT_nameDef].</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+
+    <!--Word of Doubt-->
+    <InteractionDef>
+        <defName>EP_PsychicDoubt</defName>
+        <label>psychic doubt</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechThings/WordOfDoubtConvo</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] psychically sowed doubt within the mind of [RECIPIENT_nameDef].</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+    <!--Word of Despair-->
+    <!--
+    <InteractionDef>
+        <defName>EP_PsychicDoubt</defName>
+        <label>psychic despair</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechThings/WordOfDespairConvo</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] psychically imbued despair within the mind of [RECIPIENT_nameDef].</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+    -->
 
 </Defs>

@@ -12,7 +12,7 @@
             <damageAmountBase>18</damageAmountBase>
             <armorPenetrationBase>.1</armorPenetrationBase>
             <stoppingPower>2.5</stoppingPower>
-            <speed>55</speed>
+            <speed>40</speed>
         </projectile>
     </ThingDef>
 
@@ -58,19 +58,40 @@
         </graphicData>
 
         <comps>
+         
             <li Class="CompProperties_Explosive">
                 <explosiveDamageType>Flame</explosiveDamageType>
-                <explosiveRadius>.9</explosiveRadius>
+                <explosiveRadius>.1</explosiveRadius>
                 <chanceToStartFire>1</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
             </li>
+           
 
             <li Class="CompProperties_DestroyAfterDelay">
                 <delayTicks>5</delayTicks>
             </li>
+
         </comps>
     </ThingDef>
 
+
+    <!--Chunk Throw-->
+    <ThingDef ParentName="BaseBullet">
+        <defName>SkippedChunk</defName>
+        <label>skipped chunk</label>
+        <graphicData>
+            <texPath>Things/Projectile/SkippedChunks</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <drawSize>(2.5,2.5)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>Blunt</damageDef>
+            <damageAmountBase>30</damageAmountBase>
+            <armorPenetrationBase>.1</armorPenetrationBase>
+            <stoppingPower>4</stoppingPower>
+            <speed>45</speed>
+        </projectile>
+    </ThingDef>
 
 </Defs>

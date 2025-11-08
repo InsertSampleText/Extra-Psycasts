@@ -1,5 +1,6 @@
 <Defs>
  
+    <!--Word of Happiness-->
     <ThoughtDef>
         <defName>EP_Happiness</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
@@ -15,4 +16,55 @@
         </stages>
     </ThoughtDef>
     
+    <!--Word of Misery-->
+    <ThoughtDef>
+        <defName>EP_Misery</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>EP_Misery</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic misery</label>
+                <description>I have a feeling of such misery.</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+
+    <!--Word of Resolve-->
+    <ThoughtDef>
+        <defName>EP_Resolve</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>EP_Resolve</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic resolve</label>
+                <description>I feel more resolved.</description>
+                <baseMoodEffect>5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+
+    <!--Word of Doubt-->
+    <ThoughtDef>
+        <defName>EP_Doubt</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>EP_Doubt</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic doubt</label>
+                <description>I feel doubtful.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+
 </Defs>

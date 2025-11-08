@@ -35,8 +35,147 @@
         </comps>
     </AbilityDef>
 
+    <!--Word of Misery-->
+    <AbilityDef ParentName="WordOfBase">
+        <defName>EP_WordOfMisery</defName>
+        <label>word of misery</label>
+        <description>Speak words of distress and suffering to someone, creating a sense of misery within them.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/WordOfMisery</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.55</Ability_PsyfocusCost>
+            <Ability_Duration>2400</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicMisery</interactionDef>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Misery</hediffDef>
+                <psychic>True</psychic>
+                <onlyBrain>True</onlyBrain>
+                <applicableToMechs>False</applicableToMechs>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+        </comps>
+    </AbilityDef>
 
 
+    <!--Word of Resolve-->
+    <AbilityDef ParentName="WordOfBase">
+        <defName>EP_WordOfResolve</defName>
+        <label>word of resolve</label>
+        <description>Speak words of determination and conviction, creating a sense of resolve within the target.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/WordOfResolve</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.55</Ability_PsyfocusCost>
+            <Ability_Duration>2400</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicResolve</interactionDef>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Resolve</hediffDef>
+                <psychic>True</psychic>
+                <onlyBrain>True</onlyBrain>
+                <applicableToMechs>False</applicableToMechs>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!--Word of Doubt-->
+    <AbilityDef ParentName="WordOfBase" MayRequire="Ludeon.RimWorld.Ideology">
+        <defName>EP_WordOfDoubt</defName>
+        <label>word of doubt</label>
+        <description>Speak words of challenge and question, creating a sense of doubt within the target.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/WordOfDoubt</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.55</Ability_PsyfocusCost>
+            <Ability_Duration>2400</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicDoubt</interactionDef>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Doubt</hediffDef>
+                <psychic>True</psychic>
+                <onlyBrain>True</onlyBrain>
+                <applicableToMechs>False</applicableToMechs>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!--Word of Despair-->
+    <AbilityDef ParentName="WordOfBase">
+        <defName>EP_WordOfDespair</defName>
+        <label>word of doubt</label>
+        <description>Speak words of crushing defeat and loss, creating a sense of despair within the target.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/WordOfDespair</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.55</Ability_PsyfocusCost>
+            <Ability_Duration>2400</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetAnimals>False</canTargetAnimals>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicDespair</interactionDef>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Despair</hediffDef>
+                <psychic>True</psychic>
+                <onlyBrain>True</onlyBrain>
+                <applicableToMechs>False</applicableToMechs>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+        </comps>
+    </AbilityDef>
 
 
 </Defs>
