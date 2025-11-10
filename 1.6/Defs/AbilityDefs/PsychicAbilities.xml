@@ -186,11 +186,13 @@
         </comps>
     </AbilityDef>
 
-    <!--Bleed Wounds-->
+    <!--Bleed
+    Wounds-->
     <AbilityDef ParentName="PsycastBase">
         <defName>EP_BleedWounds</defName>
         <label>bleed wounds</label>
-        <description>Psychically hinder the target body's ability to coagulate, increasing blood loss.</description>
+        <description>Psychically hinder the target body's ability to coagulate, increasing blood
+            loss.</description>
         <level>2</level>
         <iconPath>UI/Abilities/BleedWounds</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -203,7 +205,7 @@
             <warmupTime>0.3</warmupTime>
             <range>20.9</range>
             <targetParams>
-                <canTargetSelf>True</canTargetSelf>
+                <canTargetSelf>false</canTargetSelf>
                 <canTargetAnimals>True</canTargetAnimals>
             </targetParams>
         </verbProperties>
@@ -222,7 +224,150 @@
     </AbilityDef>
 
 
+    <!--Erudition-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_Erudition</defName>
+        <label>erudition</label>
+        <description>Psychically invigorate the parts of the brain related to learning and
+            understanding, improving learning and skill gain.</description>
+        <level>5</level>
+        <iconPath>UI/Abilities/BolsterLearning</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost>
+            <Ability_Duration>120</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>10.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>false</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Erudition</hediffDef>
+                <onlyBrain>true</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
 
-    
+
+    <!--Finesse-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>Finesse</defName>
+        <label>finesse</label>
+        <description>Psychically boost the target's motor function and awareness.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Finesse</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>15</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.03</Ability_PsyfocusCost>
+            <Ability_Duration>60</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.25</warmupTime>
+            <range>27.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Finesse</hediffDef>
+                <onlyBrain>True</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!--Power-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>Power</defName>
+        <label>power</label>
+        <description>Psychically boost the target's muscle twitch factor and blood pumping.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/Power</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>15</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.03</Ability_PsyfocusCost>
+            <Ability_Duration>60</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.25</warmupTime>
+            <range>27.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Power</hediffDef>
+                <onlyBrain>True</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!--Motivation-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_Motivation</defName>
+        <label>motivation</label>
+        <description>Psychically invigorate the parts of the brain related to learning and
+            understanding, improving learning and skill gain.</description>
+        <level>5</level>
+        <iconPath>UI/Abilities/BolsterLearning</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost>
+            <Ability_Duration>120</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>10.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>false</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_Motivation</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
 
 </Defs>

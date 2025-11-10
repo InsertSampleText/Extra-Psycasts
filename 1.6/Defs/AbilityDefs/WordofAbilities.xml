@@ -142,7 +142,9 @@
     </AbilityDef>
 
 
+    
     <!--Word of Despair-->
+    <!--
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfDespair</defName>
         <label>word of doubt</label>
@@ -176,6 +178,7 @@
             </li>
         </comps>
     </AbilityDef>
+    -->
 
 
 </Defs>

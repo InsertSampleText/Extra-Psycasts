@@ -137,7 +137,8 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>EP_TempBarrier</defName>
         <label>psychic temperature barrier</label>
-        <description>A thin skipgate that surrounds the target and creates a layer of insulation with air 
+        <description>A thin skipgate that surrounds the target and creates a layer of insulation
+            with air
             that protects against high and low temperatures.</description>
         <isBad>false</isBad>
         <stages>
@@ -172,7 +173,8 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>EP_Resolve</defName>
         <label>psychic resolve</label>
-        <description>Psychically-enhanced resolve. Decreases mental break threshold and global certaintity loss factor.</description>
+        <description>Psychically-enhanced resolve. Decreases mental break threshold and global
+            certaintity loss factor.</description>
         <isBad>false</isBad>
         <stages>
             <li>
@@ -200,5 +202,92 @@
             </li>
         </stages>
     </HediffDef>
+
+
+    <!--Word
+    of Despair-->
+    <!--
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Despair</defName>
+        <label>psychic despair</label>
+        <description>Psychically-induced despair. Increases global certaintity loss factor.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+                    <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">1.5</CertaintyLossFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+    -->
+
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Erudition</defName>
+        <label>psychic learning</label>
+        <description>Parts of the brain are psychically stimulated, improving learning abilities.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statFactors>
+                    <GlobalLearningFactor>0.3</GlobalLearningFactor>
+                    <LearningRateFactor MayRequire="Ludeon.Rimworld.Biotech">0.2</LearningRateFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Finesse</defName>
+        <label>psychic finesse</label>
+        <description>The body's motor control and awareness are boosted.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>1.4</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>1.1</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>1.1</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Power</defName>
+        <label>psychic power</label>
+        <description>The body's muscle strength and blood pumping are strengthened.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <MeleeDamageFactor>1.3</MeleeDamageFactor>
+                </statOffsets>
+                <statFactors>
+                    <MeleeCooldownFactor>0.8</MeleeCooldownFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
 
 </Defs>

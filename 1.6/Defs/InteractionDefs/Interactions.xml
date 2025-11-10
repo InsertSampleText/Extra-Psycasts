@@ -60,7 +60,7 @@
     <!--Word of Despair-->
     <!--
     <InteractionDef>
-        <defName>EP_PsychicDoubt</defName>
+        <defName>EP_PsychicDespair</defName>
         <label>psychic despair</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>

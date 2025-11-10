@@ -31,7 +31,7 @@
         <comps>
             <li Class="CompProperties_Explosive">
                 <explosiveDamageType>Bomb</explosiveDamageType>
-                <explosiveRadius>3.9</explosiveRadius>
+                <explosiveRadius>4.9</explosiveRadius>
                 <chanceToStartFire>.9</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
@@ -58,15 +58,16 @@
         </graphicData>
 
         <comps>
-         
+
             <li Class="CompProperties_Explosive">
                 <explosiveDamageType>Flame</explosiveDamageType>
                 <explosiveRadius>.1</explosiveRadius>
                 <chanceToStartFire>1</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
+                <doSoundEffects>false</doSoundEffects>
             </li>
-           
+
 
             <li Class="CompProperties_DestroyAfterDelay">
                 <delayTicks>5</delayTicks>
@@ -76,7 +77,8 @@
     </ThingDef>
 
 
-    <!--Chunk Throw-->
+    <!--Chunk
+    Throw-->
     <ThingDef ParentName="BaseBullet">
         <defName>SkippedChunk</defName>
         <label>skipped chunk</label>
@@ -86,12 +88,112 @@
             <drawSize>(2.5,2.5)</drawSize>
         </graphicData>
         <projectile>
-            <damageDef>Blunt</damageDef>
+            <damageDef>Demolish</damageDef>
             <damageAmountBase>30</damageAmountBase>
             <armorPenetrationBase>.1</armorPenetrationBase>
             <stoppingPower>4</stoppingPower>
             <speed>45</speed>
         </projectile>
+    </ThingDef>
+
+
+    <!--Static
+    Burst-->
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>EP_ElectroBurst</defName>
+        <label>electrical burst</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Mote/null</texPath>
+        </graphicData>
+
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveDamageType>EMP</explosiveDamageType>
+                <explosiveRadius>1.9</explosiveRadius>
+                <chanceToStartFire>0</chanceToStartFire>
+                <damageFalloff>true</damageFalloff>
+                <explodeOnDestroyed>true</explodeOnDestroyed>
+            </li>
+
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>5</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+
+    <!--Skip
+    Trap-->
+    <ThingDef ParentName="BuildingBase">
+        <defName>EP_PitTrap</defName>
+        <label>pit trap</label>
+        <description>A small pit trap hidden under the earth with small spikes in the hole. Cannot
+            be placed next to other traps and will collapse on itself after some time. Animals can
+            sense this when calm.</description>
+        <thingClass>Building_TrapDamager</thingClass>
+        <graphicData>
+            <texPath>Things/Building/PitTrap</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <damageData>
+                <rect>(0,0,1,0.15)</rect>
+            </damageData>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <rotatable>false</rotatable>
+        <tickerType>Normal</tickerType>
+        <stealable>false</stealable>
+
+        <statBases>
+            <Mass>2.5</Mass>
+            <MaxHitPoints>40</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <Beauty>-5</Beauty>
+            <Cleanliness>-2</Cleanliness>
+            <TrapMeleeDamage>50</TrapMeleeDamage>
+            <TrapSpringChance>1.0</TrapSpringChance>
+        </statBases>
+
+        <building>
+            <isTrap>true</isTrap>
+            <trapDestroyOnSpring>true</trapDestroyOnSpring>
+            <trapDamageCategory>Sharp</trapDamageCategory>
+            <expandHomeArea>false</expandHomeArea>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+        <placeWorkers>
+            <li>PlaceWorker_NeverAdjacentTrap</li>
+        </placeWorkers>
+
+        <comps>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>3000</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+
+    <!--Tornado-->
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>EP_PsychicTornado</defName>
+        <label>psychic tornado</label>
+        <thingClass>Tornado</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <alwaysFlee>true</alwaysFlee>
+
+        <CellsPerSecond>0</CellsPerSecond>
+        <DirectionChangeSpeed>0</DirectionChangeSpeed>
+
+
+        <comps>
+            <li Class="CompProperties_WindSource" />
+        </comps>
     </ThingDef>
 
 </Defs>

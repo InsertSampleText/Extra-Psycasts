@@ -145,6 +145,7 @@
             shotgun blast.</description>
         <level>2</level>
         <iconPath>UI/Abilities/RockThrow</iconPath>
+        <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>5</Ability_EntropyGain>
@@ -153,6 +154,10 @@
         <verbProperties>
             <warmupTime>0.9</warmupTime>
             <range>13.9</range>
+            <accuracyTouch>0.80</accuracyTouch>
+            <accuracyShort>0.87</accuracyShort>
+            <accuracyMedium>0.77</accuracyMedium>
+            <accuracyLong>0.64</accuracyLong>
             <targetParams>
                 <canTargetLocations>false</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
@@ -227,19 +232,20 @@
             compressed air and start a thermobaric explosion.</description>
         <level>3</level>
         <iconPath>UI/Abilities/Fireball</iconPath>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
-            <Ability_EntropyGain>13</Ability_EntropyGain>
+            <Ability_EntropyGain>15</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
+            <Ability_EffectRadius>4.9</Ability_EffectRadius>
         </statBases>
         <verbProperties>
             <warmupTime>1.5</warmupTime>
             <range>13.9</range>
             <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetMechanoids>true</canTargetMechanoids>
-                <canTargetAnimals>True</canTargetAnimals>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
             </targetParams>
         </verbProperties>
         <comps>
@@ -271,21 +277,22 @@
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_Spark</defName>
         <label>spark</label>
-        <description>A small amount of air and dust are gathered in a cylindrical skipgate then compressed. The rapid and adiabatic compression causes ignition. Lights fires on flammable things.</description>
+        <description>A small amount of air and dust are gathered in a cylindrical skipgate then
+            compressed. The rapid and adiabatic compression causes ignition. Lights fires on
+            flammable things.</description>
         <level>1</level>
         <iconPath>UI/Abilities/Spark</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>2.5</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
+            <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
             <warmupTime>.5</warmupTime>
             <range>6.9</range>
             <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>false</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
             </targetParams>
         </verbProperties>
         <comps>
@@ -313,7 +320,6 @@
     </AbilityDef>
 
 
-
     <!--Chunk
     Throw-->
     <AbilityDef ParentName="PsycastBaseSkip">
@@ -322,6 +328,7 @@
         <description>Use skipgates to gather a chunk and gravitons and launch it like a canonball.</description>
         <level>2</level>
         <iconPath>UI/Abilities/ChunkThrow</iconPath>
+        <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>12.5</Ability_EntropyGain>
@@ -330,6 +337,10 @@
         <verbProperties>
             <warmupTime>0.9</warmupTime>
             <range>13.9</range>
+            <accuracyTouch>0.80</accuracyTouch>
+            <accuracyShort>0.80</accuracyShort>
+            <accuracyMedium>0.85</accuracyMedium>
+            <accuracyLong>0.75</accuracyLong>
             <targetParams>
                 <canTargetLocations>false</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
@@ -345,7 +356,137 @@
 
     </AbilityDef>
 
+    <!--Static
+    Burst-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_StaticBurst</defName>
+        <label>static burst</label>
+        <description>Use skipgates to cause an in imbalance of electrical charges in an area,
+            leading to a small electrical burst on target.</description>
+        <level>3</level>
+        <iconPath>UI/Abilities/StaticBurst</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>10</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
+            <Ability_EffectRadius>1.9</Ability_EffectRadius>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1.5</warmupTime>
+            <range>8.9</range>
 
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_ElectroBurst</thingDef>
+                <allowOnBuildings>False</allowOnBuildings>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>5</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <!--Trap
+    Skip-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_TrapSkip</defName>
+        <label>trap skip</label>
+        <description>A patch of ground under the surface is skipped away and forms a small spikey
+            pitfall. It cannot be placed next to other traps, and will collapse safely on its own
+            after some time. Animals can sense these when calm.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/SkipTrap</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>2.5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.5</warmupTime>
+            <range>10.9</range>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_PitTrap</thingDef>
+                <allowOnBuildings>false</allowOnBuildings>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>5</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+
+    <!--Tornado-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>Tornado</defName>
+        <label>tornado</label>
+        <description>Use differential-temperature skipgates in the atmosphere to call forth heavy winds and generate a localized small tornado.</description>
+        <level>5</level>
+        <iconPath>UI/Abilities/SkipTornado</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <statBases>
+            <Ability_EntropyGain>65</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
+            <Ability_EffectRadius>13.9</Ability_EffectRadius>
+            <Ability_Duration>164</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <range>19.9</range>
+            <useableInVacuum>false</useableInVacuum>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <goodwillImpact>-35</goodwillImpact>
+                <thingDef>EP_PsychicTornado</thingDef>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>FlashstormAreaEffect</fleckDef>
+                <sound>Psycast_Skip_Exit</sound>
+            </li>
+        </comps>
+    </AbilityDef>
 
 
 </Defs>
