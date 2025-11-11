@@ -73,4 +73,34 @@
     </InteractionDef>
     -->
 
+
+    <!--Word of Bloodthirst-->
+    <InteractionDef>
+        <defName>EP_PsychicBloodlust</defName>
+        <label>psychic bloodlust</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechThings/WordOfBloodlustConvo</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] psychically enraged the mind of [RECIPIENT_nameDef].</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
+
+    <!--Word of Empathy-->
+    <InteractionDef>
+        <defName>EP_PsychicEmpathy</defName>
+        <label>psychic empathy</label>
+        <workerClass>InteractionWorker</workerClass>
+        <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+        <symbol>Things/Mote/SpeechThings/WordOfEmpathyConvo</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] psychically opened the mindd of [RECIPIENT_nameDef].</li>
+            </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+
 </Defs>

@@ -132,6 +132,7 @@
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
             </li>
+            
         </comps>
 
     </AbilityDef>
@@ -152,11 +153,11 @@
             <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
-            <warmupTime>0.9</warmupTime>
+            <warmupTime>0.5</warmupTime>
             <range>13.9</range>
             <accuracyTouch>0.80</accuracyTouch>
-            <accuracyShort>0.87</accuracyShort>
-            <accuracyMedium>0.77</accuracyMedium>
+            <accuracyShort>0.85</accuracyShort>
+            <accuracyMedium>0.75</accuracyMedium>
             <accuracyLong>0.64</accuracyLong>
             <targetParams>
                 <canTargetLocations>false</canTargetLocations>
@@ -238,11 +239,11 @@
         <statBases>
             <Ability_EntropyGain>15</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
-            <Ability_EffectRadius>4.9</Ability_EffectRadius>
+            <Ability_EffectRadius>5.9</Ability_EffectRadius>
         </statBases>
         <verbProperties>
-            <warmupTime>1.5</warmupTime>
-            <range>13.9</range>
+            <warmupTime>0.5</warmupTime>
+            <range>17.9</range>
             <targetParams>
                 <canTargetPawns>False</canTargetPawns>
                 <canTargetLocations>True</canTargetLocations>
@@ -256,15 +257,15 @@
 
             <li Class="CompProperties_AbilityEffecterOnTarget">
                 <effecterDef>Skip_Exit</effecterDef>
-                <maintainForTicks>5</maintainForTicks>
-                <scale>0.42</scale>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>1</scale>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDefs>
                     <li>PsycastSkipInnerExit</li>
                     <li>PsycastSkipOuterRingExit</li>
                 </fleckDefs>
-                <scale>0.42</scale>
+                <scale>1</scale>
                 <sound>Psycast_Skip_Exit</sound>
                 <preCastTicks>5</preCastTicks>
             </li>
@@ -335,12 +336,12 @@
             <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
-            <warmupTime>0.9</warmupTime>
-            <range>13.9</range>
-            <accuracyTouch>0.80</accuracyTouch>
-            <accuracyShort>0.80</accuracyShort>
-            <accuracyMedium>0.85</accuracyMedium>
-            <accuracyLong>0.75</accuracyLong>
+            <warmupTime>0.5</warmupTime>
+            <range>24.9</range>
+            <accuracyTouch>0.75</accuracyTouch>
+            <accuracyShort>0.75</accuracyShort>
+            <accuracyMedium>0.8</accuracyMedium>
+            <accuracyLong>0.7</accuracyLong>
             <targetParams>
                 <canTargetLocations>false</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
@@ -351,6 +352,12 @@
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>SkippedChunk</projectileDef>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnCaster">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainTicks>10</maintainTicks>
+                <scale>.5</scale>
             </li>
         </comps>
 
@@ -365,15 +372,17 @@
             leading to a small electrical burst on target.</description>
         <level>3</level>
         <iconPath>UI/Abilities/StaticBurst</iconPath>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>10</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
-            <Ability_EffectRadius>1.9</Ability_EffectRadius>
+            <Ability_EffectRadius>3.9</Ability_EffectRadius>
         </statBases>
         <verbProperties>
-            <warmupTime>1.5</warmupTime>
-            <range>8.9</range>
+            <warmupTime>0.2</warmupTime>
+            <range>14.9</range>
 
             <targetParams>
                 <canTargetPawns>False</canTargetPawns>
@@ -388,15 +397,15 @@
 
             <li Class="CompProperties_AbilityEffecterOnTarget">
                 <effecterDef>Skip_Exit</effecterDef>
-                <maintainForTicks>5</maintainForTicks>
-                <scale>0.42</scale>
+                <maintainForTicks>30</maintainForTicks>
+                <scale>0.6</scale>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDefs>
                     <li>PsycastSkipInnerExit</li>
                     <li>PsycastSkipOuterRingExit</li>
                 </fleckDefs>
-                <scale>0.42</scale>
+                <scale>0.6</scale>
                 <sound>Psycast_Skip_Exit</sound>
                 <preCastTicks>5</preCastTicks>
             </li>
@@ -421,7 +430,7 @@
         </statBases>
         <verbProperties>
             <warmupTime>.5</warmupTime>
-            <range>10.9</range>
+            <range>24.9</range>
             <targetParams>
                 <canTargetPawns>False</canTargetPawns>
                 <canTargetLocations>True</canTargetLocations>
@@ -462,10 +471,10 @@
         <writeCombatLog>True</writeCombatLog>
         <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
         <statBases>
-            <Ability_EntropyGain>65</Ability_EntropyGain>
+            <Ability_EntropyGain>75</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
             <Ability_EffectRadius>13.9</Ability_EffectRadius>
-            <Ability_Duration>164</Ability_Duration>
+            <Ability_Duration>60</Ability_Duration>
         </statBases>
         <verbProperties>
             <warmupTime>2</warmupTime>
@@ -488,5 +497,59 @@
         </comps>
     </AbilityDef>
 
+
+    <!--Static Discharge-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_StaticDischarge</defName>
+        <label>static discharge</label>
+        <description>Use skipgates to stack a bunch of positive charges on the target, then skipgate negative charges to release a discharge of electricity.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/StaticDischarge</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.5</warmupTime>
+            <range>8.9</range>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>StaticBolt</projectileDef>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <!--Supercooled Water-->
+
+
+    <!--Magma Spray-->
+
+
+    <!--Toxic Spray-->
+
+
+    <!--Tox Cloud-->
+
+
+    <!--Dust Skip-->
+
+
+    <!--Explosion-->
+
+
+    <!--Annihilate-->
+
+
+    
 
 </Defs>

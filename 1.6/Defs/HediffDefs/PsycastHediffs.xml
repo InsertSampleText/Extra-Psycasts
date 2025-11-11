@@ -52,7 +52,7 @@
         <isBad>false</isBad>
         <stages>
             <li>
-                <painFactor>1.5</painFactor>
+                <painFactor>1.3</painFactor>
             </li>
         </stages>
     </HediffDef>
@@ -129,6 +129,7 @@
                 </statOffsets>
             </li>
         </stages>
+
     </HediffDef>
 
 
@@ -230,8 +231,8 @@
         <stages>
             <li>
                 <statFactors>
-                    <GlobalLearningFactor>0.3</GlobalLearningFactor>
-                    <LearningRateFactor MayRequire="Ludeon.Rimworld.Biotech">0.2</LearningRateFactor>
+                    <GlobalLearningFactor>1.3</GlobalLearningFactor>
+                    <LearningRateFactor MayRequire="Ludeon.Rimworld.Biotech">1.2</LearningRateFactor>
                 </statFactors>
             </li>
         </stages>
@@ -272,22 +273,100 @@
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
-                        <postFactor>1.2</postFactor>
+                        <postFactor>1.25</postFactor>
                     </li>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.2</postFactor>
+                        <postFactor>1.25</postFactor>
                     </li>
                 </capMods>
-                <statOffsets>
-                    <MeleeDamageFactor>1.3</MeleeDamageFactor>
-                </statOffsets>
                 <statFactors>
+                    <MeleeDamageFactor>1.3</MeleeDamageFactor>
                     <MeleeCooldownFactor>0.8</MeleeCooldownFactor>
                 </statFactors>
             </li>
         </stages>
     </HediffDef>
+
+
+
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_WorkTrance</defName>
+        <label>psychic work trance</label>
+        <description>Undeer a minor flow state which lets them work more efficiently.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+                    <WorkSpeedGlobal>0.3</WorkSpeedGlobal>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+
+    <!--Word
+    of Bloodthirst-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Bloodthirst</defName>
+        <label>psychic bloodthirst</label>
+        <description>Psychically-induced bloodthirst. Decreases mood and non-harm related works. Increases ability to harm.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+                    <WorkSpeedGlobal>-0.4</WorkSpeedGlobal>
+                    <SocialImpact>-0.5</SocialImpact>
+                    <RangedCooldownFactor MayRequire="Ludeon.RimWorld.Biotech">-0.2</RangedCooldownFactor>
+                    <AimingDelayFactor>-0.5</AimingDelayFactor>
+                    <MoveSpeed>0.2</MoveSpeed>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.5</MeleeDamageFactor>
+                    <MeleeCooldownFactor>0.6</MeleeCooldownFactor>
+                    <StaggerDurationFactor>0.5</StaggerDurationFactor>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Word
+    of Empathy-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_Empathy</defName>
+        <label>psychic empathy</label>
+        <description>Psychically-induced enhanced empathy. Increases social skills, but makes more susceptible to mood falls.</description>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MentalBreakThreshold>0.2</MentalBreakThreshold>
+                </statOffsets>
+                <statFactors>
+                    <SocialImpact>1.3</SocialImpact>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>1.3</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <postFactor>1.3</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+
+
 
 
 </Defs>

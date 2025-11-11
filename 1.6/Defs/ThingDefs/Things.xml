@@ -31,7 +31,7 @@
         <comps>
             <li Class="CompProperties_Explosive">
                 <explosiveDamageType>Bomb</explosiveDamageType>
-                <explosiveRadius>4.9</explosiveRadius>
+                <explosiveRadius>5.9</explosiveRadius>
                 <chanceToStartFire>.9</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
@@ -92,7 +92,7 @@
             <damageAmountBase>30</damageAmountBase>
             <armorPenetrationBase>.1</armorPenetrationBase>
             <stoppingPower>4</stoppingPower>
-            <speed>45</speed>
+            <speed>40</speed>
         </projectile>
     </ThingDef>
 
@@ -113,7 +113,7 @@
         <comps>
             <li Class="CompProperties_Explosive">
                 <explosiveDamageType>EMP</explosiveDamageType>
-                <explosiveRadius>1.9</explosiveRadius>
+                <explosiveRadius>3.9</explosiveRadius>
                 <chanceToStartFire>0</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
@@ -164,9 +164,12 @@
             <expandHomeArea>false</expandHomeArea>
             <ai_chillDestination>false</ai_chillDestination>
         </building>
+        <!--
         <placeWorkers>
             <li>PlaceWorker_NeverAdjacentTrap</li>
         </placeWorkers>
+        -->
+        
 
         <comps>
             <li Class="CompProperties_DestroyAfterDelay">
@@ -187,13 +190,38 @@
         <seeThroughFog>true</seeThroughFog>
         <alwaysFlee>true</alwaysFlee>
 
-        <CellsPerSecond>0</CellsPerSecond>
-        <DirectionChangeSpeed>0</DirectionChangeSpeed>
-
-
         <comps>
             <li Class="CompProperties_WindSource" />
         </comps>
+    </ThingDef>
+
+    <!--Static
+    Discharge-->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>StaticBolt</defName>
+        <label>skipped static bolt</label>
+        <graphicData>
+            <texPath>Things/Projectile/StaticBolt</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,5)</drawSize>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <explosionRadius>.9</explosionRadius>
+            <damageDef>EMP</damageDef>
+            <damageAmountBase>5</damageAmountBase>
+            <armorPenetrationBase>.5</armorPenetrationBase>
+            <stoppingPower>1</stoppingPower>
+            <speed>150</speed>
+            <extraDamages>
+            <li>
+                <def>ElectricalBurn</def>
+                <amount>10</amount>
+            </li>
+        </extraDamages>
+        </projectile>
+        
     </ThingDef>
 
 </Defs>

@@ -235,7 +235,7 @@
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>5</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost>
+            <Ability_PsyfocusCost>0.2</Ability_PsyfocusCost>
             <Ability_Duration>120</Ability_Duration>
         </statBases>
         <verbProperties>
@@ -333,32 +333,31 @@
     </AbilityDef>
 
 
-    <!--Motivation-->
+    <!--Work Trance-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_Motivation</defName>
-        <label>motivation</label>
-        <description>Psychically invigorate the parts of the brain related to learning and
-            understanding, improving learning and skill gain.</description>
+        <defName>EP_WorkTrance</defName>
+        <label>work trance</label>
+        <description>Pyschically put the target into a minor flow state regarding their work, allowing them to work faster at their tasks.</description>
         <level>5</level>
-        <iconPath>UI/Abilities/BolsterLearning</iconPath>
+        <iconPath>UI/Abilities/WorkTrance</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>5</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost>
+            <Ability_PsyfocusCost>0.2</Ability_PsyfocusCost>
             <Ability_Duration>120</Ability_Duration>
         </statBases>
         <verbProperties>
             <warmupTime>0.3</warmupTime>
             <range>10.9</range>
             <targetParams>
-                <canTargetSelf>True</canTargetSelf>
-                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetAnimals>true</canTargetAnimals>
             </targetParams>
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Motivation</hediffDef>
+                <hediffDef>EP_WorkTrance</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -368,6 +367,19 @@
             </li>
         </comps>
     </AbilityDef>
+
+
+    <!--Quick Heal-->
+
+
+
+    <!--Regeneration Coma-->
+
+
+    <!--Scar Heal-->
+
+
+    
 
 
 </Defs>

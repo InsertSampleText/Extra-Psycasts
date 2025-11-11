@@ -4,7 +4,8 @@
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfHappiness</defName>
         <label>word of happiness</label>
-        <description>Speak words of happiness and enjoyment to someone, creating a sense of joy within them and reducing their need to have fun to be happy.</description>
+        <description>Speak words of happiness and enjoyment to someone, psychically imbuing sense of joy
+            within them and reducing their need to have fun to be happy.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfHappiness</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -35,11 +36,13 @@
         </comps>
     </AbilityDef>
 
-    <!--Word of Misery-->
+    <!--Word
+    of Misery-->
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfMisery</defName>
         <label>word of misery</label>
-        <description>Speak words of distress and suffering to someone, creating a sense of misery within them.</description>
+        <description>Speak words of distress and suffering to someone, psychically suggesting a sense of misery
+            within them.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfMisery</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -71,11 +74,13 @@
     </AbilityDef>
 
 
-    <!--Word of Resolve-->
+    <!--Word
+    of Resolve-->
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfResolve</defName>
         <label>word of resolve</label>
-        <description>Speak words of determination and conviction, creating a sense of resolve within the target.</description>
+        <description>Speak words of determination and conviction, pyschically bolstering resolve within
+            the target.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfResolve</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -106,16 +111,18 @@
         </comps>
     </AbilityDef>
 
-    <!--Word of Doubt-->
+    <!--Word
+    of Doubt-->
     <AbilityDef ParentName="WordOfBase" MayRequire="Ludeon.RimWorld.Ideology">
         <defName>EP_WordOfDoubt</defName>
         <label>word of doubt</label>
-        <description>Speak words of challenge and question, creating a sense of doubt within the target.</description>
-        <level>2</level>
+        <description>Speak words of challenge and question, psychically creating a sense of doubt within the
+            target.</description>
+        <level>1</level>
         <iconPath>UI/Abilities/WordOfDoubt</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
-            <Ability_PsyfocusCost>0.55</Ability_PsyfocusCost>
+            <Ability_PsyfocusCost>0.5</Ability_PsyfocusCost>
             <Ability_Duration>2400</Ability_Duration>
         </statBases>
         <verbProperties>
@@ -142,13 +149,14 @@
     </AbilityDef>
 
 
-    
-    <!--Word of Despair-->
+    <!--Word
+    of Despair-->
     <!--
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfDespair</defName>
         <label>word of doubt</label>
-        <description>Speak words of crushing defeat and loss, creating a sense of despair within the target.</description>
+        <description>Speak words of crushing defeat and loss, creating a sense of despair within the
+    target.</description>
         <level>4</level>
         <iconPath>UI/Abilities/WordOfDespair</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -180,5 +188,59 @@
     </AbilityDef>
     -->
 
+    <!--Word
+    of Bloodlust-->
+    <AbilityDef ParentName="WordOfBase">
+        <defName>WordOfBloodlust</defName>
+        <label>word of bloodlust</label>
+        <description>Speak words that anger and psychically amplify bloodlust within the target, making them
+            worse at working but better at killing.</description>
+        <level>5</level>
+        <iconPath>UI/Abilities/WordOfBloodlust</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.6</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <onlyTargetColonists>True</onlyTargetColonists>
+            </targetParams>
+        </verbProperties>
+        <comps>
+
+            <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicBloodlust</interactionDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!--Word
+    of Empathy-->
+    <AbilityDef ParentName="WordOfBase">
+        <defName>WordOfEmpathy</defName>
+        <label>word of empathy</label>
+        <description>Speak words of connection and understanding</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/WordOfEmpathy</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_PsyfocusCost>0.6</Ability_PsyfocusCost>
+            <Ability_Duration>240</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>False</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+           <li Class="CompProperties_AbilitySocialInteraction">
+                <interactionDef>EP_PsychicEmpathy</interactionDef>
+            </li>
+        </comps>
+    </AbilityDef>
 
 </Defs>

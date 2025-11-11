@@ -11,7 +11,7 @@
             <li>
                 <label>psychic happiness</label>
                 <description>I have a feeling of happiness and contentment.</description>
-                <baseMoodEffect>10</baseMoodEffect>
+                <baseMoodEffect>15</baseMoodEffect>
             </li>
         </stages>
     </ThoughtDef>
@@ -27,7 +27,7 @@
             <li>
                 <label>psychic misery</label>
                 <description>I have a feeling of such misery.</description>
-                <baseMoodEffect>-10</baseMoodEffect>
+                <baseMoodEffect>-20</baseMoodEffect>
             </li>
         </stages>
     </ThoughtDef>
@@ -44,7 +44,7 @@
             <li>
                 <label>psychic resolve</label>
                 <description>I feel more resolved.</description>
-                <baseMoodEffect>5</baseMoodEffect>
+                <baseMoodEffect>10</baseMoodEffect>
             </li>
         </stages>
     </ThoughtDef>
@@ -61,10 +61,60 @@
             <li>
                 <label>psychic doubt</label>
                 <description>I feel doubtful.</description>
-                <baseMoodEffect>-5</baseMoodEffect>
+                <baseMoodEffect>-10</baseMoodEffect>
             </li>
         </stages>
     </ThoughtDef>
 
+    <!--Word of Despair-->
+    <!--
+    <ThoughtDef>
+        <defName>EP_Despair</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>EP_Despair</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic doubt</label>
+                <description>I feel hopeless.</description>
+                <baseMoodEffect>-30</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+    -->
+
+    <!--Word of Bloodthirst-->
+    <ThoughtDef>
+        <defName>EP_Bloodthirst</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>EP_Bloodthirst</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic bloodthirst</label>
+                <description>I feel enraged, I want to hurt something.</description>
+                <baseMoodEffect>-10</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+
+    <!--Word of Empathy-->
+    <ThoughtDef>
+        <defName>EP_Empathy</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>EP_Empathy</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>psychic empathy</label>
+                <description>I feel like I can better understand and connect with people.</description>
+                <baseMoodEffect>0</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
 
 </Defs>
