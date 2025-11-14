@@ -61,7 +61,8 @@
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
         <statBases>
-            <Ability_PsyfocusCost>0.08</Ability_PsyfocusCost>
+            <Ability_EntropyGain>5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
             <Ability_EffectRadius>14.9</Ability_EffectRadius>
         </statBases>
         <verbProperties>
@@ -132,7 +133,7 @@
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
             </li>
-            
+
         </comps>
 
     </AbilityDef>
@@ -239,11 +240,11 @@
         <statBases>
             <Ability_EntropyGain>15</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
-            <Ability_EffectRadius>5.9</Ability_EffectRadius>
+            <Ability_EffectRadius>2.9</Ability_EffectRadius>
         </statBases>
         <verbProperties>
             <warmupTime>0.5</warmupTime>
-            <range>17.9</range>
+            <range>20.9</range>
             <targetParams>
                 <canTargetPawns>False</canTargetPawns>
                 <canTargetLocations>True</canTargetLocations>
@@ -258,16 +259,16 @@
             <li Class="CompProperties_AbilityEffecterOnTarget">
                 <effecterDef>Skip_Exit</effecterDef>
                 <maintainForTicks>60</maintainForTicks>
-                <scale>1</scale>
+                <scale>.5</scale>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDefs>
                     <li>PsycastSkipInnerExit</li>
                     <li>PsycastSkipOuterRingExit</li>
                 </fleckDefs>
-                <scale>1</scale>
+                <scale>.5</scale>
                 <sound>Psycast_Skip_Exit</sound>
-                <preCastTicks>5</preCastTicks>
+                <preCastTicks>10</preCastTicks>
             </li>
         </comps>
 
@@ -465,7 +466,8 @@
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>Tornado</defName>
         <label>tornado</label>
-        <description>Use differential-temperature skipgates in the atmosphere to call forth heavy winds and generate a localized small tornado.</description>
+        <description>Use differential-temperature skipgates in the atmosphere to call forth heavy
+            winds and generate a localized small tornado.</description>
         <level>5</level>
         <iconPath>UI/Abilities/SkipTornado</iconPath>
         <writeCombatLog>True</writeCombatLog>
@@ -498,11 +500,13 @@
     </AbilityDef>
 
 
-    <!--Static Discharge-->
+    <!--Static
+    Discharge-->
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_StaticDischarge</defName>
         <label>static discharge</label>
-        <description>Use skipgates to stack a bunch of positive charges on the target, then skipgate negative charges to release a discharge of electricity.</description>
+        <description>Use skipgates to stack a bunch of positive charges on the target, then skipgate
+            negative charges to release a discharge of electricity.</description>
         <level>2</level>
         <iconPath>UI/Abilities/StaticDischarge</iconPath>
         <writeCombatLog>True</writeCombatLog>
@@ -525,23 +529,84 @@
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>StaticBolt</projectileDef>
             </li>
+            <li Class="CompProperties_AbilityEffecterOnCaster">
+                <effecterDef>ArcLargeEMP_A</effecterDef>
+                <maintainTicks>10</maintainTicks>
+                <scale>.5</scale>
+            </li>
         </comps>
 
     </AbilityDef>
 
-    <!--Supercooled Water-->
+    <!--Supercooled
+    Water-->
 
 
-    <!--Magma Spray-->
+    <!--Magma
+    Spray-->
 
 
-    <!--Toxic Spray-->
+    <!--Toxic
+    Spray-->
 
 
-    <!--Tox Cloud-->
+    <!--Tox
+    Cloud-->
 
 
-    <!--Dust Skip-->
+    <!--Dust
+    Skip-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_DustSkip</defName>
+        <label>dust skip</label>
+        <description>Skip dust particles up from under the ground surface into the eyes of the target, blinding and obscuring vision in a small area.</description>
+        <level>1</level>
+        <iconPath>UI/Abilities/DustSkip</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>8</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.02</Ability_PsyfocusCost>
+            <Ability_EffectRadius>1.9</Ability_EffectRadius>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.5</warmupTime>
+            <range>19.9</range>
+            <targetParams>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySmokepop">
+                <smokeRadius>0.9</smokeRadius>
+                <clamorType>Ability</clamorType>
+                <clamorRadius>15</clamorRadius>
+            </li>
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+                <scale>0.42</scale>
+            </li>
+
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_DustInEyes</hediffDef>
+                <onlyBrain>false</onlyBrain>
+                <psychic>True</psychic>
+                <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+        </comps>
+    </AbilityDef>
 
 
     <!--Explosion-->
@@ -550,6 +615,123 @@
     <!--Annihilate-->
 
 
-    
+    <!--Small
+    Wallraise-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_SmallWallraise</defName>
+        <label>small wallraise</label>
+        <description>Form a temporary, singular wall by skipping rubble and soil up from deep under
+            the
+            ground.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/SmallWallraise</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>18</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.25</warmupTime>
+            <range>17.9</range>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityWallraise">
+                <compClass>CompAbilityEffect_Wallraise</compClass>
+                <pattern>
+                    <li>(0, 0)</li>
+                </pattern>
+                <screenShakeIntensity>.25</screenShakeIntensity>
+                <clamorType>Ability</clamorType>
+                <clamorRadius>15</clamorRadius>
+                <sound>PsycastWallraise</sound>
+            </li>
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>.4</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>.4</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!--Entrapment-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>Entrapment</defName>
+        <label>entrapment</label>
+        <description>Form temporary walls around a target by skipping rubble and soil up from deep
+            under the
+            ground.</description>
+        <level>6</level>
+        <iconPath>UI/Abilities/Entrapment</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>50</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityWallraise">
+                <compClass>CompAbilityEffect_Wallraise</compClass>
+                <pattern>
+                    <li>(-2, -2)</li>
+                    <li>(-2, -1)</li>
+                    <li>(-2, 0)</li>
+                    <li>(-2, 1)</li>
+                    <li>(-2, 2)</li>
+                    <li>(-1, 2)</li>
+                    <li>(-1, -2)</li>
+                    <li>(0, 2)</li>
+                    <li>(0, -2)</li>
+                    <li>(1, 2)</li>
+                    <li>(1, -2)</li>
+                    <li>(2, -2)</li>
+                    <li>(2, -1)</li>
+                    <li>(2, 0)</li>
+                    <li>(2, 1)</li>
+                    <li>(2, 2)</li>
+
+                </pattern>
+                <screenShakeIntensity>1.0</screenShakeIntensity>
+                <clamorType>Ability</clamorType>
+                <clamorRadius>25</clamorRadius>
+                <sound>PsycastWallraise</sound>
+            </li>
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>2</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>2</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+    </AbilityDef>
 
 </Defs>

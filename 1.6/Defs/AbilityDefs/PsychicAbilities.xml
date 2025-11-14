@@ -333,11 +333,13 @@
     </AbilityDef>
 
 
-    <!--Work Trance-->
+    <!--Work
+    Trance-->
     <AbilityDef ParentName="PsycastBase">
         <defName>EP_WorkTrance</defName>
         <label>work trance</label>
-        <description>Pyschically put the target into a minor flow state regarding their work, allowing them to work faster at their tasks.</description>
+        <description>Pyschically put the target into a minor flow state regarding their work,
+            allowing them to work faster at their tasks.</description>
         <level>5</level>
         <iconPath>UI/Abilities/WorkTrance</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -369,17 +371,79 @@
     </AbilityDef>
 
 
-    <!--Quick Heal-->
+    <!--Quick
+    Heal-->
+
+
+    <!--Regeneration
+    Coma-->
+
+
+    <!--Scar
+    Heal-->
+
+
+    <!--Psychic
+    Pain Needle-->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>EP_PsychicPainNeedle</defName>
+        <label>pain needle</label>
+        <description>Agitate the pain pathways in the brain, causing a sharp pain sensation.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/PainNeedle</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>15</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
+            <Ability_Duration>30</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.5</warmupTime>
+            <range>20.9</range>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+                <canTargetLocations>False</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_PsychicPainNeedle</hediffDef>
+                <onlyBrain>True</onlyBrain>
+                <psychic>True</psychic>
+                <goodwillImpact>-15</goodwillImpact>
+                <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!--Psychic
+    Toment-->
 
 
 
-    <!--Regeneration Coma-->
+    <!--Grand
+    Burden-->
 
 
-    <!--Scar Heal-->
+    <!--Animal
+    Call-->
 
 
-    
+    <!--Mass
+    Beckon-->
+
+
+    <!--Fear Pulse-->
+
+
+    <!--Psychic Rally-->
 
 
 </Defs>

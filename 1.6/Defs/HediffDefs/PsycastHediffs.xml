@@ -256,7 +256,7 @@
                     </li>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.1</postFactor>
+                        <postFactor>1.2</postFactor>
                     </li>
                 </capMods>
             </li>
@@ -273,21 +273,21 @@
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
-                        <postFactor>1.25</postFactor>
+                        <postFactor>1.2</postFactor>
                     </li>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.25</postFactor>
+                        <postFactor>1.2</postFactor>
                     </li>
                 </capMods>
                 <statFactors>
                     <MeleeDamageFactor>1.3</MeleeDamageFactor>
                     <MeleeCooldownFactor>0.8</MeleeCooldownFactor>
+                    <MoveSpeed>1.1</MoveSpeed>
                 </statFactors>
             </li>
         </stages>
     </HediffDef>
-
 
 
     <HediffDef ParentName="PsycastHediffBase">
@@ -310,7 +310,8 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>EP_Bloodthirst</defName>
         <label>psychic bloodthirst</label>
-        <description>Psychically-induced bloodthirst. Decreases mood and non-harm related works. Increases ability to harm.</description>
+        <description>Psychically-induced bloodthirst. Decreases mood and non-harm related works.
+            Increases ability to harm.</description>
         <isBad>false</isBad>
         <stages>
             <li>
@@ -341,7 +342,8 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>EP_Empathy</defName>
         <label>psychic empathy</label>
-        <description>Psychically-induced enhanced empathy. Increases social skills, but makes more susceptible to mood falls.</description>
+        <description>Psychically-induced enhanced empathy. Increases social skills, but makes more
+            susceptible to mood falls.</description>
         <isBad>false</isBad>
         <stages>
             <li>
@@ -366,7 +368,51 @@
     </HediffDef>
 
 
+    <!--Dust
+    Skip-->
+    <HediffDef>
+        <defName>EP_DustInEyes</defName>
+        <label>dust</label>
+        <labelNoun>dust</labelNoun>
+        <description>Assortment of dust in the eyes. It impairs vision, but can be cleared in a few moments.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <battleStateLabel>blind</battleStateLabel>
+        <maxSeverity>1</maxSeverity>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>.65</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_SelfHeal">
+                <healAmount>0.1</healAmount>
+            </li>
+        </comps>
+    </HediffDef>
 
+
+    <!--Psychic Pain Needle-->
+    <HediffDef>
+        <defName>EP_PsychicPainNeedle</defName>
+        <label>psychic pain needle</label>
+        <description>Psychic agitation within the brain makes it feel like a needle is piercing through the skull.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>true</isBad>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <statOffsets>
+                    <painOffset>0.2</painOffset>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
 
 
 </Defs>

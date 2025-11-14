@@ -31,7 +31,7 @@
         <comps>
             <li Class="CompProperties_Explosive">
                 <explosiveDamageType>Bomb</explosiveDamageType>
-                <explosiveRadius>5.9</explosiveRadius>
+                <explosiveRadius>2.9</explosiveRadius>
                 <chanceToStartFire>.9</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
@@ -223,5 +223,9 @@
         </projectile>
         
     </ThingDef>
+
+
+
+
 
 </Defs>
