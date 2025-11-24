@@ -4,7 +4,8 @@
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfHappiness</defName>
         <label>word of happiness</label>
-        <description>Speak words of happiness and enjoyment to someone, psychically imbuing sense of joy
+        <description>Speak words of happiness and enjoyment to someone, psychically imbuing sense of
+            joy
             within them and reducing their need to have fun to be happy.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfHappiness</iconPath>
@@ -41,7 +42,8 @@
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfMisery</defName>
         <label>word of misery</label>
-        <description>Speak words of distress and suffering to someone, psychically suggesting a sense of misery
+        <description>Speak words of distress and suffering to someone, psychically suggesting a
+            sense of misery
             within them.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfMisery</iconPath>
@@ -79,7 +81,8 @@
     <AbilityDef ParentName="WordOfBase">
         <defName>EP_WordOfResolve</defName>
         <label>word of resolve</label>
-        <description>Speak words of determination and conviction, pyschically bolstering resolve within
+        <description>Speak words of determination and conviction, pyschically bolstering resolve
+            within
             the target.</description>
         <level>2</level>
         <iconPath>UI/Abilities/WordOfResolve</iconPath>
@@ -108,6 +111,11 @@
                 <applicableToMechs>False</applicableToMechs>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
             </li>
+
+            <li Class="CompProperties_AbilityReassure">
+                <baseCertaintyGain>0.1</baseCertaintyGain>
+            </li>
+
         </comps>
     </AbilityDef>
 
@@ -116,9 +124,10 @@
     <AbilityDef ParentName="WordOfBase" MayRequire="Ludeon.RimWorld.Ideology">
         <defName>EP_WordOfDoubt</defName>
         <label>word of doubt</label>
-        <description>Speak words of challenge and question, psychically creating a sense of doubt within the
+        <description>Speak words of challenge and question, psychically creating a sense of doubt
+            within the
             target.</description>
-        <level>1</level>
+        <level>2</level>
         <iconPath>UI/Abilities/WordOfDoubt</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <statBases>
@@ -144,6 +153,10 @@
                 <onlyBrain>True</onlyBrain>
                 <applicableToMechs>False</applicableToMechs>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
+            </li>
+
+            <li Class="CompProperties_AbilityReassure">
+                <baseCertaintyGain>-0.05</baseCertaintyGain>
             </li>
         </comps>
     </AbilityDef>
@@ -193,7 +206,8 @@
     <AbilityDef ParentName="WordOfBase">
         <defName>WordOfBloodlust</defName>
         <label>word of bloodlust</label>
-        <description>Speak words that anger and psychically amplify bloodlust within the target, making them
+        <description>Speak words that anger and psychically amplify bloodlust within the target,
+            making them
             worse at working but better at killing.</description>
         <level>5</level>
         <iconPath>UI/Abilities/WordOfBloodlust</iconPath>
@@ -237,7 +251,7 @@
             </targetParams>
         </verbProperties>
         <comps>
-           <li Class="CompProperties_AbilitySocialInteraction">
+            <li Class="CompProperties_AbilitySocialInteraction">
                 <interactionDef>EP_PsychicEmpathy</interactionDef>
             </li>
         </comps>

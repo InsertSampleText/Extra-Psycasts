@@ -169,7 +169,7 @@
             <li>PlaceWorker_NeverAdjacentTrap</li>
         </placeWorkers>
         -->
-        
+
 
         <comps>
             <li Class="CompProperties_DestroyAfterDelay">
@@ -215,17 +215,96 @@
             <stoppingPower>1</stoppingPower>
             <speed>150</speed>
             <extraDamages>
-            <li>
-                <def>ElectricalBurn</def>
-                <amount>10</amount>
-            </li>
-        </extraDamages>
+                <li>
+                    <def>ElectricalBurn</def>
+                    <amount>10</amount>
+                </li>
+            </extraDamages>
         </projectile>
-        
+
+    </ThingDef>
+
+    <!--Explosion-->
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>EP_AerosolBomb</defName>
+        <label>aerosol bomb</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Mote/null</texPath>
+        </graphicData>
+
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explosiveRadius>6.9</explosiveRadius>
+                <chanceToStartFire>1</chanceToStartFire>
+                <damageFalloff>true</damageFalloff>
+                <explodeOnDestroyed>true</explodeOnDestroyed>
+                <preExplosionSpawnThingDef>EP_AerosolBombFlame</preExplosionSpawnThingDef>
+            </li>
+
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>5</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>EP_AerosolBombFlame</defName>
+        <label>aerosol bomb flame</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Mote/null</texPath>
+        </graphicData>
+
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveDamageType>Flame</explosiveDamageType>
+                <explosiveRadius>6.9</explosiveRadius>
+                <chanceToStartFire>1</chanceToStartFire>
+                <damageFalloff>true</damageFalloff>
+                <explodeOnDestroyed>true</explodeOnDestroyed>
+            </li>
+
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>5</delayTicks>
+            </li>
+        </comps>
     </ThingDef>
 
 
+    <!--Annihilate-->
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>EP_AnnihilationBomb</defName>
+        <label>annihilation bomb</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
 
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Mote/null</texPath>
+        </graphicData>
+
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveDamageType>BombSuper</explosiveDamageType>
+                <explosiveRadius>1.9</explosiveRadius>
+                <chanceToStartFire>0</chanceToStartFire>
+                <damageFalloff>false</damageFalloff>
+                <explodeOnDestroyed>true</explodeOnDestroyed>
+            </li>
+
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>5</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
 
 
 </Defs>

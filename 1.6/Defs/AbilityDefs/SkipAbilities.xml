@@ -530,7 +530,7 @@
                 <projectileDef>StaticBolt</projectileDef>
             </li>
             <li Class="CompProperties_AbilityEffecterOnCaster">
-                <effecterDef>ArcLargeEMP_A</effecterDef>
+                <effecterDef>Skip_Exit</effecterDef>
                 <maintainTicks>10</maintainTicks>
                 <scale>.5</scale>
             </li>
@@ -610,9 +610,98 @@
 
 
     <!--Explosion-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_Explosion</defName>
+        <label>explosion</label>
+        <description>Skip a lot of natural aerosol into the area, then create an ignition via compressed air. This creates a large thermobaric explosion.</description>
+        <level>5</level>
+        <iconPath>UI/Abilities/Explosion</iconPath>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>45</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.09</Ability_PsyfocusCost>
+            <Ability_EffectRadius>6.9</Ability_EffectRadius>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.6</warmupTime>
+            <range>20.9</range>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_AerosolBomb</thingDef>
+                <allowOnBuildings>False</allowOnBuildings>
+            </li>
 
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>.5</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>.5</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>10</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
 
     <!--Annihilate-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_Annihilate</defName>
+        <label>annihilate</label>
+        <description>Skip a small grain of anti-matter. Destabilized by skipgates, it causes a small, but devastating release of energy.</description>
+        <level>5</level>
+        <iconPath>UI/Abilities/Annihilate</iconPath>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>65</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.09</Ability_PsyfocusCost>
+            <Ability_EffectRadius>1.9</Ability_EffectRadius>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.4</warmupTime>
+            <range>20.9</range>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_AnnihilationBomb</thingDef>
+                <allowOnBuildings>False</allowOnBuildings>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>.5</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>.5</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>10</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
 
 
     <!--Small

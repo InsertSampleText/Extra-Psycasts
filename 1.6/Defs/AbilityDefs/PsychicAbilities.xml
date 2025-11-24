@@ -387,24 +387,22 @@
     Pain Needle-->
     <AbilityDef ParentName="PsycastBase">
         <defName>EP_PsychicPainNeedle</defName>
-        <label>pain needle</label>
+        <label>psychic pain needle</label>
         <description>Agitate the pain pathways in the brain, causing a sharp pain sensation.</description>
         <level>2</level>
-        <iconPath>UI/Abilities/PainNeedle</iconPath>
+        <iconPath>UI/Abilities/PsychicPainNeedle</iconPath>
         <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
             <Ability_EntropyGain>15</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.01</Ability_PsyfocusCost>
-            <Ability_Duration>30</Ability_Duration>
+            <Ability_Duration>25</Ability_Duration>
         </statBases>
         <verbProperties>
             <warmupTime>.5</warmupTime>
             <range>20.9</range>
             <targetParams>
-                <canTargetSelf>True</canTargetSelf>
                 <canTargetAnimals>True</canTargetAnimals>
-                <canTargetLocations>False</canTargetLocations>
             </targetParams>
         </verbProperties>
         <comps>
@@ -424,8 +422,41 @@
 
 
     <!--Psychic
-    Toment-->
-
+    Torment-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_PsychicTorment</defName>
+        <label>psychic torment</label>
+        <description>Create a painful psychic feedback loop within a target's brain that increases in distress caused until the psychic power burns itself out.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/PsychicTorment</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>30</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.07</Ability_PsyfocusCost>
+            <Ability_Duration>80</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EP_PsychicTorment</hediffDef>
+                <onlyBrain>True</onlyBrain>
+                <psychic>True</psychic>
+                <goodwillImpact>-15</goodwillImpact>
+                <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
 
 
     <!--Grand
@@ -440,10 +471,16 @@
     Beckon-->
 
 
-    <!--Fear Pulse-->
+    <!--Fear
+    Pulse-->
 
 
-    <!--Psychic Rally-->
+    <!--Psychic
+    Rally-->
+
+
+    <!--Hyper
+    Adrenaline Rush-->
 
 
 </Defs>

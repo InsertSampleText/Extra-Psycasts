@@ -374,7 +374,8 @@
         <defName>EP_DustInEyes</defName>
         <label>dust</label>
         <labelNoun>dust</labelNoun>
-        <description>Assortment of dust in the eyes. It impairs vision, but can be cleared in a few moments.</description>
+        <description>Assortment of dust in the eyes. It impairs vision, but can be cleared in a few
+            moments.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <battleStateLabel>blind</battleStateLabel>
         <maxSeverity>1</maxSeverity>
@@ -397,19 +398,71 @@
     </HediffDef>
 
 
-    <!--Psychic Pain Needle-->
-    <HediffDef>
+    <!--Psychic
+    Pain Needle-->
+    <HediffDef ParentName="PsycastHediffBase">
         <defName>EP_PsychicPainNeedle</defName>
         <label>psychic pain needle</label>
-        <description>Psychic agitation within the brain makes it feel like a needle is piercing through the skull.</description>
+        <description>Psychic agitation within the brain makes it feel like a needle is piercing
+            through the skull.</description>
         <hediffClass>HediffWithComps</hediffClass>
-        <isBad>true</isBad>
         <isBad>true</isBad>
         <stages>
             <li>
-                <statOffsets>
-                    <painOffset>0.2</painOffset>
-                </statOffsets>
+                <painOffset>0.2</painOffset>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--Psychic
+    Torment-->
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>EP_PsychicTorment</defName>
+        <label>psychic torment</label>
+        <description>A psychic feedback loop that will mount in effect until it burns itself out.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerSecond">
+                <severityPerSecond>0.0125</severityPerSecond>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <minSeverity>0.0125</minSeverity>
+                <label>building psychic torment</label>
+                <painOffset>0.1</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+            </li>
+            <li>
+                <minSeverity>0.33</minSeverity>
+                <label>pyschic torment</label>
+                <painOffset>0.2</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
+            </li>
+            <li>
+                <minSeverity>0.66</minSeverity>
+                <label>psychic agony</label>
+                <painOffset>0.4</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>PsychicSensitivity</capacityFactorEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
