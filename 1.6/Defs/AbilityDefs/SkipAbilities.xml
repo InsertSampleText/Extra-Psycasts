@@ -1,5 +1,24 @@
 <Defs>
 
+    <AbilityDef Name="EP_PsycastBaseSkipShoot" Abstract="True">
+        <abilityClass>Psycast</abilityClass>
+        <category>Skip</category>
+        <statBases>
+            <Ability_Duration>0</Ability_Duration>
+        </statBases>
+        <warmupSound>PsycastCastLoop</warmupSound>
+        <verbProperties>
+            <range>24.9</range>
+            <requireLineOfSight>True</requireLineOfSight>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetBuildings>True</canTargetBuildings>
+                <canTargetAnimals>True</canTargetAnimals>
+                <thingCategory>Item</thingCategory>
+                <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
 
     <!--cold
     pinhole-->
@@ -134,43 +153,6 @@
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
             </li>
 
-        </comps>
-
-    </AbilityDef>
-
-    <!--Rock
-    Throw-->
-    <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_RockThrow</defName>
-        <label>rock throw</label>
-        <description>Use skipgates to gather small rocks and launch them with gravitons like a
-            shotgun blast.</description>
-        <level>2</level>
-        <iconPath>UI/Abilities/RockThrow</iconPath>
-        <writeCombatLog>True</writeCombatLog>
-        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
-        <statBases>
-            <Ability_EntropyGain>5</Ability_EntropyGain>
-            <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
-        </statBases>
-        <verbProperties>
-            <warmupTime>0.5</warmupTime>
-            <range>13.9</range>
-            <accuracyTouch>0.80</accuracyTouch>
-            <accuracyShort>0.85</accuracyShort>
-            <accuracyMedium>0.75</accuracyMedium>
-            <accuracyLong>0.64</accuracyLong>
-            <targetParams>
-                <canTargetLocations>false</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-                <canTargetAnimals>true</canTargetAnimals>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>SkippedRocks</projectileDef>
-            </li>
         </comps>
 
     </AbilityDef>
@@ -322,12 +304,63 @@
     </AbilityDef>
 
 
+    <!--Rock
+    Throw-->
+    <!--
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_RockThrow</defName>
+        <label>rock throw</label>
+        <description>Use skipgates to gather small rocks and launch them with gravitons.</description>
+        <level>2</level>
+        <iconPath>UI/Abilities/RockThrow</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>10</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.075</Ability_PsyfocusCost>
+        </statBases>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <verbProperties>
+            <verbClass>Verb_AbilityShoot</verbClass>
+            <defaultProjectile>SkippedRocks</defaultProjectile>
+            <range>13.9</range>
+            <soundCast>Psycast_Skip_Exit</soundCast>
+            <warmupTime>0.5</warmupTime>
+            <burstShotCount>4</burstShotCount>
+            <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+            <accuracyTouch>0.80</accuracyTouch>
+            <accuracyShort>0.85</accuracyShort>
+            <accuracyMedium>0.75</accuracyMedium>
+            <accuracyLong>0.64</accuracyLong>
+            <minRange>.01</minRange>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+            <ai_IsWeapon>false</ai_IsWeapon>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        </verbProperties>
+        <comps>
+
+            <li Class="CompProperties_AbilityEffecterOnCaster">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainTicks>10</maintainTicks>
+                <scale>.5</scale>
+            </li>
+        </comps>
+    </AbilityDef>
+    -->
+
     <!--Chunk
     Throw-->
+    <!--
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_ChunkThrow</defName>
         <label>chunk throw</label>
-        <description>Use skipgates to gather a chunk and gravitons and launch it like a canonball.</description>
+        <description>Use skipgates to gather a chunk and gravitons and launch it like a
+    canonball.</description>
         <level>2</level>
         <iconPath>UI/Abilities/ChunkThrow</iconPath>
         <writeCombatLog>True</writeCombatLog>
@@ -363,6 +396,7 @@
         </comps>
 
     </AbilityDef>
+    -->
 
     <!--Static
     Burst-->
@@ -538,16 +572,73 @@
 
     </AbilityDef>
 
-    <!--Supercooled
-    Water-->
+    <!--Water
+    Spew-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>Water Jet</defName>
+        <label>water jet</label>
+        <description>Open a skipgate deep underwater. The pressure difference will cause the water to jettison through the skipgate until it destabilizes, resulting in a high pressure water hose spewing forth.</description>
+        <level>3</level>
+        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
+        <statBases>
+            <Ability_EntropyGain>7</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.5</warmupTime>
+            <range>7.9</range>
+            <targetParams>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EP_CompProperties_AbilityLiquidSpew">
+                <range>7.9</range>
+                <lineWidthEnd>3</lineWidthEnd>
+                <filthDef>Filth_Water</filthDef>
+                <effecterDef>Water_Spew</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+                <damageDef>Blunt</damageDef>
+                <damAmount>10</damAmount>
+            </li>
+        </comps>
+    </AbilityDef>
 
-
-    <!--Magma
-    Spray-->
+    <!--Lava
+    Skip-->
 
 
     <!--Toxic
     Spray-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_ToxicSpray</defName>
+        <label>toxic spray</label>
+        <description>Skip natural toxic gases and liquids and spew them from a skipgate.</description>
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>8.9</range>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>Psycast_Skip_Exit</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySprayLiquid">
+                <projectileDef>Proj_Acid</projectileDef>
+                <numCellsToHit>3</numCellsToHit>
+                <sprayEffecter>AcidSpray_Directional</sprayEffecter>
+            </li>
+        </comps>
+    </AbilityDef>
 
 
     <!--Tox
@@ -559,7 +650,8 @@
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_DustSkip</defName>
         <label>dust skip</label>
-        <description>Skip dust particles up from under the ground surface into the eyes of the target, blinding and obscuring vision in a small area.</description>
+        <description>Skip dust particles up from under the ground surface into the eyes of the
+            target, blinding and obscuring vision in a small area.</description>
         <level>1</level>
         <iconPath>UI/Abilities/DustSkip</iconPath>
         <writeCombatLog>True</writeCombatLog>
@@ -613,7 +705,8 @@
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_Explosion</defName>
         <label>explosion</label>
-        <description>Skip a lot of natural aerosol into the area, then create an ignition via compressed air. This creates a large thermobaric explosion.</description>
+        <description>Skip a lot of natural aerosol into the area, then create an ignition via
+            compressed air. This creates a large thermobaric explosion.</description>
         <level>5</level>
         <iconPath>UI/Abilities/Explosion</iconPath>
         <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
@@ -660,7 +753,8 @@
     <AbilityDef ParentName="PsycastBaseSkip">
         <defName>EP_Annihilate</defName>
         <label>annihilate</label>
-        <description>Skip a small grain of anti-matter. Destabilized by skipgates, it causes a small, but devastating release of energy.</description>
+        <description>Skip a small grain of anti-matter. Destabilized by skipgates, it causes a
+            small, but devastating release of energy.</description>
         <level>5</level>
         <iconPath>UI/Abilities/Annihilate</iconPath>
         <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
@@ -822,5 +916,55 @@
             </li>
         </comps>
     </AbilityDef>
+
+
+    <!--Mud
+    Skip-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_MudSkip</defName>
+        <label>mud skip</label>
+        <description>A patch of mud is skipped onto the target surface, which makes it harder to
+            traverse. It will eventually break away or can be broken up manually.</description>
+        <level>1</level>
+        <iconPath>UI/Abilities/MudSkip</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>2.5</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>.5</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_SkippedMud</thingDef>
+                <allowOnBuildings>false</allowOnBuildings>
+            </li>
+
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>5</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <!--Skip
+    Foot Traps-->
 
 </Defs>

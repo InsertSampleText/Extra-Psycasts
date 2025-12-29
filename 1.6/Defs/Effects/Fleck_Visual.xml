@@ -1,0 +1,51 @@
+<Defs>
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>WaterSpew_A</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.2</fadeInTime>
+        <solidTime>0.4</solidTime>
+        <fadeOutTime>0.2</fadeOutTime>
+        <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+        <rotateTowardsMoveDirectionExtraAngle>-90</rotateTowardsMoveDirectionExtraAngle>
+        <graphicData>
+            <graphicClass>Graphic_FleckPulse</graphicClass>
+            <texPath>Things/Effects/FireSpew_A</texPath>
+            <shaderParameters>
+                <_NumFrames>5</_NumFrames>
+                <_FramesPerSec>7</_FramesPerSec>
+            </shaderParameters>
+            <drawSize>1.2</drawSize>
+        </graphicData>
+    </FleckDef>
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>WaterSpew_Short</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.1</fadeInTime>
+        <solidTime>0.4</solidTime>
+        <fadeOutTime>0.2</fadeOutTime>
+        <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+        <rotateTowardsMoveDirectionExtraAngle>-90</rotateTowardsMoveDirectionExtraAngle>
+        <graphicData>
+            <graphicClass>Graphic_FleckPulse</graphicClass>
+            <texPath>Things/Effects/WaterSpew_A</texPath>
+            <shaderParameters>
+                <_NumFrames>5</_NumFrames>
+                <_FramesPerSec>7</_FramesPerSec>
+            </shaderParameters>
+            <drawSize>1.2</drawSize>
+        </graphicData>
+    </FleckDef>
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>WaterSpew_Base</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.2</fadeInTime>
+        <solidTime>0.2</solidTime>
+        <fadeOutTime>0.1</fadeOutTime>
+        <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+        <graphicData>
+            <graphicClass>Graphic_FleckPulse</graphicClass>
+            <texPath>Things/Mote/WaterSpew_Base</texPath>
+            <drawSize>(1.25, 2.5)</drawSize>
+        </graphicData>
+    </FleckDef>
+</Defs>

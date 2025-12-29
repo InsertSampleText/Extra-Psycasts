@@ -1,20 +1,24 @@
 <Defs>
-    <!--Rock Throw-->
+
+    <!--null-->
     <ThingDef ParentName="BaseBullet">
-        <defName>SkippedRocks</defName>
-        <label>skipped rocks</label>
+        <defName>EP_null</defName>
+        <label>filler</label>
         <graphicData>
-            <texPath>Things/Projectile/SkippedRocks</texPath>
+            <texPath>Things/Mote/null</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <projectile>
             <damageDef>Blunt</damageDef>
-            <damageAmountBase>18</damageAmountBase>
-            <armorPenetrationBase>.1</armorPenetrationBase>
-            <stoppingPower>2.5</stoppingPower>
-            <speed>40</speed>
+            <damageAmountBase>0</damageAmountBase>
+            <armorPenetrationBase>0</armorPenetrationBase>
+            <stoppingPower>0</stoppingPower>
+            <speed>999</speed>
         </projectile>
     </ThingDef>
+
+
+   
 
     <!--Fireball-->
     <ThingDef ParentName="EtherealThingBase">
@@ -30,12 +34,12 @@
 
         <comps>
             <li Class="CompProperties_Explosive">
-                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explosiveDamageType>Flame</explosiveDamageType>
                 <explosiveRadius>2.9</explosiveRadius>
                 <chanceToStartFire>.9</chanceToStartFire>
-                <damageFalloff>true</damageFalloff>
+                <damageFalloff>false</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
-                <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+                <postExplosionSpawnSingleThingDef>Filth_BlastMark</postExplosionSpawnSingleThingDef>
             </li>
 
             <li Class="CompProperties_DestroyAfterDelay">
@@ -77,8 +81,30 @@
     </ThingDef>
 
 
+    
+
+     <!--Rock Throw-->
+     <!--
+    <ThingDef ParentName="BaseBullet">
+        <defName>SkippedRocks</defName>
+        <label>skipped rocks</label>
+        <graphicData>
+            <texPath>Things/Projectile/SkippedRocks</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Blunt</damageDef>
+            <damageAmountBase>4</damageAmountBase>
+            <armorPenetrationBase>.1</armorPenetrationBase>
+            <stoppingPower>.5</stoppingPower>
+            <speed>40</speed>
+        </projectile>
+    </ThingDef>
+    -->
+
     <!--Chunk
     Throw-->
+    <!--
     <ThingDef ParentName="BaseBullet">
         <defName>SkippedChunk</defName>
         <label>skipped chunk</label>
@@ -95,7 +121,7 @@
             <speed>40</speed>
         </projectile>
     </ThingDef>
-
+    -->
 
     <!--Static
     Burst-->
@@ -146,6 +172,7 @@
         <rotatable>false</rotatable>
         <tickerType>Normal</tickerType>
         <stealable>false</stealable>
+        <size>(2,2)</size>
 
         <statBases>
             <Mass>2.5</Mass>
@@ -153,12 +180,13 @@
             <Flammability>0</Flammability>
             <Beauty>-5</Beauty>
             <Cleanliness>-2</Cleanliness>
-            <TrapMeleeDamage>50</TrapMeleeDamage>
+            <TrapMeleeDamage>80</TrapMeleeDamage>
             <TrapSpringChance>1.0</TrapSpringChance>
         </statBases>
 
         <building>
             <isTrap>true</isTrap>
+            <trapPeacefulWildAnimalsSpringChanceFactor>0.25</trapPeacefulWildAnimalsSpringChanceFactor>
             <trapDestroyOnSpring>true</trapDestroyOnSpring>
             <trapDamageCategory>Sharp</trapDamageCategory>
             <expandHomeArea>false</expandHomeArea>
@@ -243,7 +271,7 @@
                 <chanceToStartFire>1</chanceToStartFire>
                 <damageFalloff>true</damageFalloff>
                 <explodeOnDestroyed>true</explodeOnDestroyed>
-                <preExplosionSpawnThingDef>EP_AerosolBombFlame</preExplosionSpawnThingDef>
+                <postExplosionSpawnSingleThingDef>Filth_BlastMark</postExplosionSpawnSingleThingDef>
             </li>
 
             <li Class="CompProperties_DestroyAfterDelay">
@@ -306,5 +334,49 @@
         </comps>
     </ThingDef>
 
+
+    <!--Skip
+    Mud-->
+    <ThingDef ParentName="BuildingBase">
+        <defName>EP_SkippedMud</defName>
+        <label>skipped mud</label>
+        <description>A small pit trap hidden under the earth with small spikes in the hole. Cannot
+            be placed next to other traps and will collapse on itself after some time. Animals can
+            sense this when calm.</description>
+        <thingClass>Building_TrapDamager</thingClass>
+        <graphicData>
+            <texPath>Things/Building/SkippedMud</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <altitudeLayer>FloorEmplacement</altitudeLayer>
+        <rotatable>false</rotatable>
+        <tickerType>Normal</tickerType>
+        <stealable>false</stealable>
+        <size>(2,2)</size>
+        <useHitPoints>false</useHitPoints>
+        <passability>Standable</passability>
+        <pathCost>50</pathCost>
+
+        <statBases>
+            <Mass>10</Mass>
+            <!--<MaxHitPoints>100</MaxHitPoints>-->
+            <Flammability>0</Flammability>
+            <Beauty>-10</Beauty>
+            <Cleanliness>-8</Cleanliness>
+        </statBases>
+
+        <building>
+            <expandHomeArea>false</expandHomeArea>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+
+
+        <comps>
+            <li Class="CompProperties_DestroyAfterDelay">
+                <delayTicks>3000</delayTicks>
+            </li>
+        </comps>
+    </ThingDef>
 
 </Defs>

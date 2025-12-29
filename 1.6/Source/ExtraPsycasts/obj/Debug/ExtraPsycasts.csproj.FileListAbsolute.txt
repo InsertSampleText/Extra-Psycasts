@@ -1,0 +1,4 @@
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Assemblies\ExtraPsycasts.dll
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\ExtraPsycasts\obj\Debug\ExtraPsycasts.csproj.AssemblyReference.cache
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\ExtraPsycasts\obj\Debug\ExtraPsycasts.csproj.CoreCompileInputs.cache
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\ExtraPsycasts\obj\Debug\ExtraPsycasts.dll
