@@ -11,11 +11,11 @@ using Verse.Noise;
 namespace ExtraPsycasts
 {
 
-    public class EP_CompAbilityEffect_LiquidSpew : CompAbilityEffect
+    public class EP_CompAbilityEffect_WaterSpew : CompAbilityEffect
     {
         private readonly List<IntVec3> tmpCells = new List<IntVec3>();
 
-        private new EP_CompProperties_AbilityLiquidSpew Props => (EP_CompProperties_AbilityLiquidSpew)props;
+        private new EP_CompProperties_AbilityWaterSpew Props => (EP_CompProperties_AbilityWaterSpew)props;
 
         private Pawn Pawn => parent.pawn;
 
@@ -168,7 +168,7 @@ namespace ExtraPsycasts
     }
 
 
-    public class EP_CompProperties_AbilityLiquidSpew : CompProperties_AbilityEffect
+    public class EP_CompProperties_AbilityWaterSpew : CompProperties_AbilityEffect
     {
         public float range;
 
@@ -186,9 +186,9 @@ namespace ExtraPsycasts
 
         public bool damageFalloff = true;
 
-        public EP_CompProperties_AbilityLiquidSpew()
+        public EP_CompProperties_AbilityWaterSpew()
         {
-            compClass = typeof(EP_CompAbilityEffect_LiquidSpew);
+            compClass = typeof(EP_CompAbilityEffect_WaterSpew);
         }
     }
 
@@ -196,13 +196,51 @@ namespace ExtraPsycasts
     public class EP_HeavyGravityPinhole : ThingWithComps
     {
 
-        private float radius;
+        private const int UpdateHediffInterval = 30;
+
+        private const float radius = 8.9f;
+
+        protected override void Tick()
+        {
+            base.Tick();
+            if (!this.IsHashIntervalTick(30))
+            {
+                return;
+            }
+            List<Pawn> allPawns = base.Map.mapPawns.AllPawns;
+            for (int i = 0; i < allPawns.Count; i++)
+            {
+                Pawn pawn = allPawns[i];
+                if (pawn.RaceProps.Humanlike && base.Position.InHorDistOf(pawn.PositionHeld, radius))
+                {
+                    ((EP_Hediff_HeavyGravity)pawn.health.AddHediff(DefDatabase<HediffDef>.GetNamed("EP_HeavyGravity"))).lastTickInRangeOfInducer = GenTicks.TicksGame;
+                }
+            }
+        }
 
 
     }
 
-    public class EP_HeavyGravity : Hediff
+    public class EP_Hediff_HeavyGravity : Hediff
     {
+        public int lastTickInRangeOfInducer;
+
+        private const int InducerBufferTicks = 60;
+
+        public bool InRangeOfInducer => GenTicks.TicksGame <= lastTickInRangeOfInducer + 60;
+
+        public override bool ShouldRemove
+        {
+            get
+            {
+                if (!InRangeOfInducer)
+                {
+                    return base.ShouldRemove;
+                }
+                return false;
+            }
+        }
+
 
 
     }

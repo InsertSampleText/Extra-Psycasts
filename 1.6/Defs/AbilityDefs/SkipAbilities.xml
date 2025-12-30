@@ -573,9 +573,9 @@
     </AbilityDef>
 
     <!--Water
-    Spew-->
+    Jet-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>Water Jet</defName>
+        <defName>EP_WaterJet</defName>
         <label>water jet</label>
         <description>Open a skipgate deep underwater. The pressure difference will cause the water to jettison through the skipgate until it destabilizes, resulting in a high pressure water hose spewing forth.</description>
         <level>3</level>
@@ -589,22 +589,56 @@
             <Ability_PsyfocusCost>0.04</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
-            <warmupTime>.5</warmupTime>
-            <range>7.9</range>
+            <warmupTime>1</warmupTime>
+            <range>9.9</range>
             <targetParams>
-                <canTargetPawns>True</canTargetPawns>
-                <canTargetLocations>false</canTargetLocations>
+                <canTargetLocations>True</canTargetLocations>
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="EP_CompProperties_AbilityLiquidSpew">
-                <range>7.9</range>
-                <lineWidthEnd>3</lineWidthEnd>
+            <li Class="ExtraPsycasts.EP_CompProperties_AbilityWaterSpew">
+                <range>9.9</range>
+                <lineWidthEnd>2</lineWidthEnd>
                 <filthDef>Filth_Water</filthDef>
                 <effecterDef>Water_Spew</effecterDef>
                 <canHitFilledCells>true</canHitFilledCells>
                 <damageDef>Blunt</damageDef>
-                <damAmount>10</damAmount>
+                <damAmount>15</damAmount>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!--Piercing Water-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_PiercingWater</defName>
+        <label>piercing water</label>
+        <description>Open a pinhole skipgate into a watery abyss. The high pressure difference will cause the water to jettison through the skipgate until it destabilizes, resulting in a high pressure water cutter.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
+        <statBases>
+            <Ability_EntropyGain>14</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.06</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+            <range>17.9</range>
+            <targetParams>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="ExtraPsycasts.EP_CompProperties_AbilityWaterSpew">
+                <range>17.9</range>
+                <lineWidthEnd>1</lineWidthEnd>
+                <filthDef>Filth_Water</filthDef>
+                <effecterDef>Water_Spew2</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+                <damageDef>RangedStab</damageDef>
+                <damAmount>30</damAmount>
             </li>
         </comps>
     </AbilityDef>
@@ -615,30 +649,6 @@
 
     <!--Toxic
     Spray-->
-    <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_ToxicSpray</defName>
-        <label>toxic spray</label>
-        <description>Skip natural toxic gases and liquids and spew them from a skipgate.</description>
-        <iconPath>UI/Abilities/AcidSpray</iconPath>
-        <aiCanUse>true</aiCanUse>
-        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
-        <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
-            <range>8.9</range>
-            <warmupTime>0.5</warmupTime>
-            <soundCast>Psycast_Skip_Exit</soundCast>
-            <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-            </targetParams>
-        </verbProperties>
-        <comps>
-            <li Class="CompProperties_AbilitySprayLiquid">
-                <projectileDef>Proj_Acid</projectileDef>
-                <numCellsToHit>3</numCellsToHit>
-                <sprayEffecter>AcidSpray_Directional</sprayEffecter>
-            </li>
-        </comps>
-    </AbilityDef>
 
 
     <!--Tox
@@ -965,6 +975,50 @@
     </AbilityDef>
 
     <!--Skip
-    Foot Traps-->
+    Caltrops-->
+
+    <!--Heavy Gravity Pinhole-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EP_HeavyGravityPinhole</defName>
+        <label>heavy gravity pinhole</label>
+        <description>A pinhole is opened to a large celestial body and skips the larger amounts of gravitons in to its surrounudings, creating increaesed gravity in the area.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/ColdSpacePinhole</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <statBases>
+            <Ability_PsyfocusCost>0.14</Ability_PsyfocusCost>
+            <Ability_EffectRadius>8.9</Ability_EffectRadius>
+            <Ability_Duration>3000</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <warmupTime>0.2</warmupTime>
+            <range>24.9</range>
+            <targetParams>
+                <canTargetPawns>False</canTargetPawns>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySpawn">
+                <thingDef>EP_HeavyGravityPinhole</thingDef>
+                <allowOnBuildings>False</allowOnBuildings>
+            </li>
+            <li Class="CompProperties_AbilityEffecterOnTarget">
+                <effecterDef>Skip_Exit</effecterDef>
+                <maintainForTicks>60</maintainForTicks>
+                <scale>0.42</scale>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDefs>
+                    <li>PsycastSkipInnerExit</li>
+                    <li>PsycastSkipOuterRingExit</li>
+                </fleckDefs>
+                <scale>0.42</scale>
+                <sound>Psycast_Skip_Exit</sound>
+                <preCastTicks>5</preCastTicks>
+            </li>
+        </comps>
+    </AbilityDef>
 
 </Defs>

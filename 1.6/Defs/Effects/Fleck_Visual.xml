@@ -9,7 +9,7 @@
         <rotateTowardsMoveDirectionExtraAngle>-90</rotateTowardsMoveDirectionExtraAngle>
         <graphicData>
             <graphicClass>Graphic_FleckPulse</graphicClass>
-            <texPath>Things/Effects/FireSpew_A</texPath>
+            <texPath>Things/Effects/WaterSpew_A</texPath>
             <shaderParameters>
                 <_NumFrames>5</_NumFrames>
                 <_FramesPerSec>7</_FramesPerSec>

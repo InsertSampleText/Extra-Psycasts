@@ -113,7 +113,7 @@
         <label>psychic low grav field</label>
         <description>A thin skipgate that surrounds the target and creates a slightly lowers
             gravity, allowing for slightly faster movement due to being a slightly lighter weight.</description>
-        <isBad>true</isBad>
+        <isBad>false</isBad>
         <stages>
             <li>
                 <capMods>
@@ -467,5 +467,33 @@
         </stages>
     </HediffDef>
 
+    <!--Heavy Gravity-->
+    <HediffDef>
+        <defName>EP_HeavyGravity</defName>
+        <label>heavy gravity</label>
+        <hediffClass>ExtraPsycasts.EP_Hediff_HeavyGravity</hediffClass>
+        <description>Under the effects of stronger gravity.</description>
+        <isBad>true</isBad>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-.15</offset>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <CrawlSpeed>0.15</CrawlSpeed>
+                    <TrapSpringChance>0.5</TrapSpringChance>
+                    <CarryingCapacity>-0.25</CarryingCapacity>
+                </statOffsets>
+            </li>
+        </stages>
+
+    </HediffDef>
 
 </Defs>
