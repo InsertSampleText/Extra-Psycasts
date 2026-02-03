@@ -1,7 +1,7 @@
 <Defs>
 
     <EffecterDef>
-        <defName>Water_Spew</defName>
+        <defName>EMP_Water_Spew</defName>
         <children>
             <li>
                 <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
@@ -29,7 +29,7 @@
     </EffecterDef>
 
     <EffecterDef>
-        <defName>Water_Spew2</defName>
+        <defName>EMP_Water_Spew2</defName>
         <children>
             <li>
                 <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>

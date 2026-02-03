@@ -2,7 +2,7 @@
 
     <!--Word of Happiness-->
     <InteractionDef>
-        <defName>EP_PsychicHappiness</defName>
+        <defName>EMP_PsychicHappiness</defName>
         <label>psychic happiness</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
@@ -16,7 +16,7 @@
 
     <!--Word of Misery-->
     <InteractionDef>
-        <defName>EP_PsychicMisery</defName>
+        <defName>EMP_PsychicMisery</defName>
         <label>psychic misery</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
@@ -30,7 +30,7 @@
 
     <!--Word of Resolve-->
     <InteractionDef>
-        <defName>EP_PsychicResolve</defName>
+        <defName>EMP_PsychicResolve</defName>
         <label>psychic resolve</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
@@ -45,7 +45,7 @@
 
     <!--Word of Doubt-->
     <InteractionDef>
-        <defName>EP_PsychicDoubt</defName>
+        <defName>EMP_PsychicDoubt</defName>
         <label>psychic doubt</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
@@ -60,7 +60,7 @@
     <!--Word of Despair-->
     <!--
     <InteractionDef>
-        <defName>EP_PsychicDespair</defName>
+        <defName>EMP_PsychicDespair</defName>
         <label>psychic despair</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
@@ -76,7 +76,7 @@
 
     <!--Word of Bloodthirst-->
     <InteractionDef>
-        <defName>EP_PsychicBloodlust</defName>
+        <defName>EMP_PsychicBloodlust</defName>
         <label>psychic bloodlust</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
@@ -91,7 +91,7 @@
 
     <!--Word of Empathy-->
     <InteractionDef>
-        <defName>EP_PsychicEmpathy</defName>
+        <defName>EMP_PsychicEmpathy</defName>
         <label>psychic empathy</label>
         <workerClass>InteractionWorker</workerClass>
         <ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>

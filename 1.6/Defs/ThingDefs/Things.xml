@@ -2,7 +2,7 @@
 
     <!--null-->
     <ThingDef ParentName="BaseBullet">
-        <defName>EP_null</defName>
+        <defName>EMP_null</defName>
         <label>filler</label>
         <graphicData>
             <texPath>Things/Mote/null</texPath>
@@ -22,7 +22,7 @@
 
     <!--Fireball-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_DustBomb</defName>
+        <defName>EMP_DustBomb</defName>
         <label>fine dust particles</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -51,7 +51,7 @@
 
     <!--Spark-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_Spark</defName>
+        <defName>EMP_Spark</defName>
         <label>spark</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -126,7 +126,7 @@
     <!--Static
     Burst-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_ElectroBurst</defName>
+        <defName>EMP_ElectroBurst</defName>
         <label>electrical burst</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -155,7 +155,7 @@
     <!--Skip
     Trap-->
     <ThingDef ParentName="BuildingBase">
-        <defName>EP_PitTrap</defName>
+        <defName>EMP_PitTrap</defName>
         <label>pit trap</label>
         <description>A small pit trap hidden under the earth with small spikes in the hole. Cannot
             be placed next to other traps and will collapse on itself after some time. Animals can
@@ -209,7 +209,7 @@
 
     <!--Tornado-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_PsychicTornado</defName>
+        <defName>EMP_PsychicTornado</defName>
         <label>psychic tornado</label>
         <thingClass>Tornado</thingClass>
         <tickerType>Normal</tickerType>
@@ -254,7 +254,7 @@
 
     <!--Explosion-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_AerosolBomb</defName>
+        <defName>EMP_AerosolBomb</defName>
         <label>aerosol bomb</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -281,7 +281,7 @@
     </ThingDef>
 
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_AerosolBombFlame</defName>
+        <defName>EMP_AerosolBombFlame</defName>
         <label>aerosol bomb flame</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -309,7 +309,7 @@
 
     <!--Annihilate-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_AnnihilationBomb</defName>
+        <defName>EMP_AnnihilationBomb</defName>
         <label>annihilation bomb</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -338,7 +338,7 @@
     <!--Skip
     Mud-->
     <ThingDef ParentName="BuildingBase">
-        <defName>EP_SkippedMud</defName>
+        <defName>EMP_SkippedMud</defName>
         <label>skipped mud</label>
         <description>A small pit trap hidden under the earth with small spikes in the hole. Cannot
             be placed next to other traps and will collapse on itself after some time. Animals can

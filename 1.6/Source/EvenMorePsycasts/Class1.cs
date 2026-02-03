@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 using Verse.Noise;
+using Verse.Sound;
 
-namespace ExtraPsycasts
+namespace EvenMorePsycasts
 {
 
-    public class EP_CompAbilityEffect_WaterSpew : CompAbilityEffect
+    public class EMP_CompAbilityEffect_WaterSpew : CompAbilityEffect
     {
         private readonly List<IntVec3> tmpCells = new List<IntVec3>();
 
-        private new EP_CompProperties_AbilityWaterSpew Props => (EP_CompProperties_AbilityWaterSpew)props;
+        private new EMP_CompProperties_AbilityWaterSpew Props => (EMP_CompProperties_AbilityWaterSpew)props;
 
         private Pawn Pawn => parent.pawn;
 
@@ -168,7 +169,7 @@ namespace ExtraPsycasts
     }
 
 
-    public class EP_CompProperties_AbilityWaterSpew : CompProperties_AbilityEffect
+    public class EMP_CompProperties_AbilityWaterSpew : CompProperties_AbilityEffect
     {
         public float range;
 
@@ -186,63 +187,216 @@ namespace ExtraPsycasts
 
         public bool damageFalloff = true;
 
-        public EP_CompProperties_AbilityWaterSpew()
+        public EMP_CompProperties_AbilityWaterSpew()
         {
-            compClass = typeof(EP_CompAbilityEffect_WaterSpew);
+            compClass = typeof(EMP_CompAbilityEffect_WaterSpew);
         }
     }
 
 
-    public class EP_HeavyGravityPinhole : ThingWithComps
+
+    public class EMP_HeavyGravityPinhole : ThingWithComps
     {
 
-        private const int UpdateHediffInterval = 30;
-
         private const float radius = 8.9f;
+        private const int UpdateHediffInterval = 30;
 
         protected override void Tick()
         {
             base.Tick();
-            if (!this.IsHashIntervalTick(30))
-            {
-                return;
-            }
+            //if (!this.IsHashIntervalTick(UpdateHediffInterval))
+            //{
+            //    return;
+            //}
             List<Pawn> allPawns = base.Map.mapPawns.AllPawns;
             for (int i = 0; i < allPawns.Count; i++)
             {
                 Pawn pawn = allPawns[i];
-                if (pawn.RaceProps.Humanlike && base.Position.InHorDistOf(pawn.PositionHeld, radius))
+                if ((pawn.RaceProps.Humanlike || pawn.RaceProps.Animal) && base.Position.InHorDistOf(pawn.PositionHeld, radius))
                 {
-                    ((EP_Hediff_HeavyGravity)pawn.health.AddHediff(DefDatabase<HediffDef>.GetNamed("EP_HeavyGravity"))).lastTickInRangeOfInducer = GenTicks.TicksGame;
+                    ((EMP_Hediff_HeavyGravity)pawn.health.GetOrAddHediff(HediffDefOf.EMP_HeavyGravity)).lastTickInRangeOfGravPinhole = GenTicks.TicksGame;
                 }
+
             }
         }
 
 
     }
 
-    public class EP_Hediff_HeavyGravity : Hediff
+    public static class HediffDefOf
     {
-        public int lastTickInRangeOfInducer;
+        public static HediffDef EMP_HeavyGravity;
+    }
 
-        private const int InducerBufferTicks = 60;
+    public class EMP_Hediff_HeavyGravity : Hediff
+    {
+        public int lastTickInRangeOfGravPinhole;
 
-        public bool InRangeOfInducer => GenTicks.TicksGame <= lastTickInRangeOfInducer + 60;
+        private const int PinholeBufferTicks = 60;
+
+        public bool InRangeOfGravPinhole => GenTicks.TicksGame <= lastTickInRangeOfGravPinhole + PinholeBufferTicks;
+
 
         public override bool ShouldRemove
         {
             get
             {
-                if (!InRangeOfInducer)
+                if (!InRangeOfGravPinhole)
                 {
                     return base.ShouldRemove;
                 }
                 return false;
             }
         }
+        public override void TickInterval(int delta)
+        {
+            base.TickInterval(delta);
+            if (!InRangeOfGravPinhole)
+            {
+                pawn.health.RemoveHediff(this);
+            }
+
+        }
+
+
+        //public override void ExposeData()
+        //{
+        //    base.ExposeData();
+        //    Scribe_Values.Look(ref lastTickInRangeOfGravPinhole, "lastTickInRangeOfGravPinhole", 0);
+        //}
 
 
 
     }
 
+
+    public class EMP_CompAbilityEffect_LiquidSkip : CompAbilityEffect
+    {
+
+        private new EMP_CompProperties_AbilityLiquidSkip Props => (EMP_CompProperties_AbilityLiquidSkip)props;
+        private Pawn Pawn => parent.pawn;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
+        {
+
+
+            ThingDef filthDef = Props.filthDef;
+            int damAmount = Props.damAmount;
+            DamageDef damageDef = Props.damageDef;
+            FleckDef fleckDef = Props.fleckDef;
+            bool Dousefire = Props.douseFire;
+
+            Pawn pawn = Pawn;
+            IntVec3 cell = target.Cell;
+            Map mapHeld = parent.pawn.MapHeld;
+
+            if (Props.fleckDef == null)
+            {
+                Log.Error("EvenMorePsycasts No FleckDef assigned for LiquidSkip ability.");
+                return;
+            }
+
+            if (Props.filthDef == null)
+            {
+                Log.Error("EvenMorePsycasts No FleckDef assigned for LiquidSkip ability.");
+                return;
+            }
+
+            SimpleCurve flammabilityAttachFireChanceCurve = parent.verb.verbProps.flammabilityAttachFireChanceCurve;
+            GenExplosion.DoExplosion(cell, mapHeld, 0f, damageDef, pawn, damAmount, -1f, null, null, null, null, null, 1f, 1, null, null, 255, applyDamageToExplosionCellsNeighbors: false, null, 0f, 1, 1f, damageFalloff: false, null, null, null, doVisualEffects: false, 0.6f, 0f, doSoundEffects: false, null, 1f, flammabilityAttachFireChanceCurve);
+            base.Apply(target, dest);
+            Map map = parent.pawn.Map;
+
+
+            
+
+            foreach (IntVec3 item in AffectedCells(target, map))
+            {
+                if (!item.InBounds(map))
+                {
+                    continue;
+                }
+                List<Thing> thingList = item.GetThingList(map);
+                for (int num = thingList.Count - 1; num >= 0; num--)
+                {
+                    if (thingList[num] is Fire && Dousefire == true)
+                    {
+                        thingList[num].Destroy();
+                    }
+                    else if (thingList[num] is Pawn otherpawn)
+                    {
+                        otherpawn.GetInvisibilityComp()?.DisruptInvisibility();
+                    }
+                }
+                if (!item.Filled(map))
+                {
+                    FilthMaker.TryMakeFilth(item, map, filthDef);
+                }
+
+                //FleckMaker.Static(target.Cell, parent.pawn.Map, Props.fleckDef, 1f);
+                FleckCreationData dataStatic = FleckMaker.GetDataStatic(item.ToVector3Shifted(), map, fleckDef);
+                dataStatic.rotationRate = Rand.Range(-30, 30);
+                dataStatic.rotation = 90 * Rand.RangeInclusive(0, 3);
+                map.flecks.CreateFleck(dataStatic);
+                CompAbilityEffect_Teleport.SendSkipUsedSignal(item, parent.pawn);
+            }
+        }
+
+        private IEnumerable<IntVec3> AffectedCells(LocalTargetInfo target, Map map)
+        {
+            if (!target.Cell.InBounds(map) || target.Cell.Filled(parent.pawn.Map))
+            {
+                yield break;
+            }
+            foreach (IntVec3 item in GenRadial.RadialCellsAround(target.Cell, parent.def.EffectRadius, useCenter: true))
+            {
+                if (item.InBounds(map) && GenSight.LineOfSightToEdges(target.Cell, item, map, skipFirstCell: true))
+                {
+                    yield return item;
+                }
+            }
+        }
+
+        public override void DrawEffectPreview(LocalTargetInfo target)
+        {
+            GenDraw.DrawFieldEdges(AffectedCells(target, parent.pawn.Map).ToList(), Valid(target) ? Color.white : Color.red);
+        }
+
+        public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
+        {
+            if (target.Cell.Filled(parent.pawn.Map))
+            {
+                if (throwMessages)
+                {
+                    Messages.Message("AbilityOccupiedCells".Translate(parent.def.LabelCap), target.ToTargetInfo(parent.pawn.Map), MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
+            return true;
+        }
+
+    }
+
+    public class EMP_CompProperties_AbilityLiquidSkip : CompProperties_AbilityEffect
+    {
+
+        public ThingDef filthDef;
+
+        public int damAmount = -1;
+
+        public EffecterDef effecterDef;
+
+        public DamageDef damageDef;
+
+        public FleckDef fleckDef;
+
+        public bool douseFire;
+
+
+        public EMP_CompProperties_AbilityLiquidSkip()
+        {
+            compClass = typeof(EMP_CompAbilityEffect_WaterSpew);
+        }
+
+    }
 }

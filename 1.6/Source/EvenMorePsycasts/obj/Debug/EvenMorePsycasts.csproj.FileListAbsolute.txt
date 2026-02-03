@@ -1,0 +1,7 @@
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\ExtraPsycasts\obj\Debug\EvenMorePsycasts.csproj.AssemblyReference.cache
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\ExtraPsycasts\obj\Debug\EvenMorePsycasts.csproj.CoreCompileInputs.cache
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\ExtraPsycasts\obj\Debug\ExtraPsycasts.dll
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Assemblies\EvenMorePsycasts.dll
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\EvenMorePsycasts\obj\Debug\EvenMorePsycasts.csproj.AssemblyReference.cache
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\EvenMorePsycasts\obj\Debug\EvenMorePsycasts.csproj.CoreCompileInputs.cache
+C:\Users\jared\Documents\GitHub\Rimworld Mods\Extra-Psycasts\1.6\Source\EvenMorePsycasts\obj\Debug\EvenMorePsycasts.dll

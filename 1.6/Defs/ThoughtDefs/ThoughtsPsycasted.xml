@@ -2,9 +2,9 @@
  
     <!--Word of Happiness-->
     <ThoughtDef>
-        <defName>EP_Happiness</defName>
+        <defName>EMP_Happiness</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Happiness</hediff>
+        <hediff>EMP_Happiness</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <stages>
@@ -18,9 +18,9 @@
     
     <!--Word of Misery-->
     <ThoughtDef>
-        <defName>EP_Misery</defName>
+        <defName>EMP_Misery</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Misery</hediff>
+        <hediff>EMP_Misery</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <stages>
@@ -35,9 +35,9 @@
 
     <!--Word of Resolve-->
     <ThoughtDef>
-        <defName>EP_Resolve</defName>
+        <defName>EMP_Resolve</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Resolve</hediff>
+        <hediff>EMP_Resolve</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Child, Adult</developmentalStageFilter>
         <stages>
@@ -52,9 +52,9 @@
 
     <!--Word of Doubt-->
     <ThoughtDef>
-        <defName>EP_Doubt</defName>
+        <defName>EMP_Doubt</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Doubt</hediff>
+        <hediff>EMP_Doubt</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Child, Adult</developmentalStageFilter>
         <stages>
@@ -69,9 +69,9 @@
     <!--Word of Despair-->
     <!--
     <ThoughtDef>
-        <defName>EP_Despair</defName>
+        <defName>EMP_Despair</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Despair</hediff>
+        <hediff>EMP_Despair</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Child, Adult</developmentalStageFilter>
         <stages>
@@ -86,9 +86,9 @@
 
     <!--Word of Bloodthirst-->
     <ThoughtDef>
-        <defName>EP_Bloodthirst</defName>
+        <defName>EMP_Bloodthirst</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Bloodthirst</hediff>
+        <hediff>EMP_Bloodthirst</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Child, Adult</developmentalStageFilter>
         <stages>
@@ -103,9 +103,9 @@
 
     <!--Word of Empathy-->
     <ThoughtDef>
-        <defName>EP_Empathy</defName>
+        <defName>EMP_Empathy</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>EP_Empathy</hediff>
+        <hediff>EMP_Empathy</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <developmentalStageFilter>Child, Adult</developmentalStageFilter>
         <stages>

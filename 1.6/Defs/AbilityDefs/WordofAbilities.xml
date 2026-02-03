@@ -2,7 +2,7 @@
 
     <!--Word of Happiness-->
     <AbilityDef ParentName="WordOfBase">
-        <defName>EP_WordOfHappiness</defName>
+        <defName>EMP_WordOfHappiness</defName>
         <label>word of happiness</label>
         <description>Speak words of happiness and enjoyment to someone, psychically imbuing sense of
             joy
@@ -24,11 +24,11 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicHappiness</interactionDef>
+                <interactionDef>EMP_PsychicHappiness</interactionDef>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Happiness</hediffDef>
+                <hediffDef>EMP_Happiness</hediffDef>
                 <psychic>True</psychic>
                 <onlyBrain>True</onlyBrain>
                 <applicableToMechs>False</applicableToMechs>
@@ -40,7 +40,7 @@
     <!--Word
     of Misery-->
     <AbilityDef ParentName="WordOfBase">
-        <defName>EP_WordOfMisery</defName>
+        <defName>EMP_WordOfMisery</defName>
         <label>word of misery</label>
         <description>Speak words of distress and suffering to someone, psychically suggesting a
             sense of misery
@@ -62,11 +62,11 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicMisery</interactionDef>
+                <interactionDef>EMP_PsychicMisery</interactionDef>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Misery</hediffDef>
+                <hediffDef>EMP_Misery</hediffDef>
                 <psychic>True</psychic>
                 <onlyBrain>True</onlyBrain>
                 <applicableToMechs>False</applicableToMechs>
@@ -79,7 +79,7 @@
     <!--Word
     of Resolve-->
     <AbilityDef ParentName="WordOfBase">
-        <defName>EP_WordOfResolve</defName>
+        <defName>EMP_WordOfResolve</defName>
         <label>word of resolve</label>
         <description>Speak words of determination and conviction, pyschically bolstering resolve
             within
@@ -101,11 +101,11 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicResolve</interactionDef>
+                <interactionDef>EMP_PsychicResolve</interactionDef>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Resolve</hediffDef>
+                <hediffDef>EMP_Resolve</hediffDef>
                 <psychic>True</psychic>
                 <onlyBrain>True</onlyBrain>
                 <applicableToMechs>False</applicableToMechs>
@@ -122,7 +122,7 @@
     <!--Word
     of Doubt-->
     <AbilityDef ParentName="WordOfBase" MayRequire="Ludeon.RimWorld.Ideology">
-        <defName>EP_WordOfDoubt</defName>
+        <defName>EMP_WordOfDoubt</defName>
         <label>word of doubt</label>
         <description>Speak words of challenge and question, psychically creating a sense of doubt
             within the
@@ -144,11 +144,11 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicDoubt</interactionDef>
+                <interactionDef>EMP_PsychicDoubt</interactionDef>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Doubt</hediffDef>
+                <hediffDef>EMP_Doubt</hediffDef>
                 <psychic>True</psychic>
                 <onlyBrain>True</onlyBrain>
                 <applicableToMechs>False</applicableToMechs>
@@ -166,7 +166,7 @@
     of Despair-->
     <!--
     <AbilityDef ParentName="WordOfBase">
-        <defName>EP_WordOfDespair</defName>
+        <defName>EMP_WordOfDespair</defName>
         <label>word of doubt</label>
         <description>Speak words of crushing defeat and loss, creating a sense of despair within the
     target.</description>
@@ -187,11 +187,11 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicDespair</interactionDef>
+                <interactionDef>EMP_PsychicDespair</interactionDef>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Despair</hediffDef>
+                <hediffDef>EMP_Despair</hediffDef>
                 <psychic>True</psychic>
                 <onlyBrain>True</onlyBrain>
                 <applicableToMechs>False</applicableToMechs>
@@ -225,7 +225,7 @@
         <comps>
 
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicBloodlust</interactionDef>
+                <interactionDef>EMP_PsychicBloodlust</interactionDef>
             </li>
         </comps>
     </AbilityDef>
@@ -252,7 +252,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySocialInteraction">
-                <interactionDef>EP_PsychicEmpathy</interactionDef>
+                <interactionDef>EMP_PsychicEmpathy</interactionDef>
             </li>
         </comps>
     </AbilityDef>

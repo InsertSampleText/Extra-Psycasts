@@ -1,14 +1,14 @@
 <ModMetaData>
-    <name>Extra Psycasts</name>
+    <name>Even More Psycasts</name>
     <author>InsertSampleText</author>
-    <packageId>insertsampletext.extrapsycasts</packageId>
-
+    <packageId>insertsampletext.evenmorepsycasts</packageId>
+    <url>https://github.com/InsertSampleText/Even-More-Psycasts</url>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
 
     <modVersion>1</modVersion>
-    <description>Extra (hopefully) Vanilla friendly and (hopefully) balanced psycasts for utility and combat.</description>
+    <description>Extra Vanilla-esque(hopefully) and balanced (hopefully) psycasts for utility and combat.</description>
     <modDependencies>
         <li>
             <packageId>Ludeon.RimWorld.Royalty</packageId>

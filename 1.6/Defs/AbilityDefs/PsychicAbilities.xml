@@ -7,7 +7,7 @@
     <!--Bolster
     Immunity-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_BolsterImmunity</defName>
+        <defName>EMP_BolsterImmunity</defName>
         <label>bolster immunity</label>
         <description>Psychically energize and reinforce the target's immune system, boosting their
             immunity gain.</description>
@@ -30,7 +30,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_BolsterImmunity</hediffDef>
+                <hediffDef>EMP_BolsterImmunity</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -45,7 +45,7 @@
     <!--Bolster
     Clotting-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_BolsterClotting</defName>
+        <defName>EMP_BolsterClotting</defName>
         <label>bolster clotting</label>
         <description>Psychically boost the target body's ability to coagulate, stopping bleeding
             sooner.</description>
@@ -68,7 +68,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_BolsterClotting</hediffDef>
+                <hediffDef>EMP_BolsterClotting</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -83,7 +83,7 @@
     <!--Bolster
     Healing-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_BolsterHealing</defName>
+        <defName>EMP_BolsterHealing</defName>
         <label>bolster healing</label>
         <description>Psychically boost the target body's healing system.</description>
         <level>2</level>
@@ -105,7 +105,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_BolsterHealing</hediffDef>
+                <hediffDef>EMP_BolsterHealing</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -119,7 +119,7 @@
     <!--Pain
     Boost-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_PainBoost</defName>
+        <defName>EMP_PainBoost</defName>
         <label>pain boost</label>
         <description>Psychically boost the target body's healing system.</description>
         <level>1</level>
@@ -141,7 +141,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_PsychicPain</hediffDef>
+                <hediffDef>EMP_PsychicPain</hediffDef>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
                 <psychic>True</psychic>
                 <applicableToMechs>False</applicableToMechs>
@@ -177,7 +177,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_UnBurden</hediffDef>
+                <hediffDef>EMP_UnBurden</hediffDef>
                 <psychic>True</psychic>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
@@ -189,7 +189,7 @@
     <!--Bleed
     Wounds-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_BleedWounds</defName>
+        <defName>EMP_BleedWounds</defName>
         <label>bleed wounds</label>
         <description>Psychically hinder the target body's ability to coagulate, increasing blood
             loss.</description>
@@ -212,7 +212,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_BleedWounds</hediffDef>
+                <hediffDef>EMP_BleedWounds</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -226,7 +226,7 @@
 
     <!--Erudition-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_Erudition</defName>
+        <defName>EMP_Erudition</defName>
         <label>erudition</label>
         <description>Psychically invigorate the parts of the brain related to learning and
             understanding, improving learning and skill gain.</description>
@@ -249,7 +249,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Erudition</hediffDef>
+                <hediffDef>EMP_Erudition</hediffDef>
                 <onlyBrain>true</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -285,7 +285,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Finesse</hediffDef>
+                <hediffDef>EMP_Finesse</hediffDef>
                 <onlyBrain>True</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -321,7 +321,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_Power</hediffDef>
+                <hediffDef>EMP_Power</hediffDef>
                 <onlyBrain>True</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -336,7 +336,7 @@
     <!--Work
     Trance-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_WorkTrance</defName>
+        <defName>EMP_WorkTrance</defName>
         <label>work trance</label>
         <description>Pyschically put the target into a minor flow state regarding their work,
             allowing them to work faster at their tasks.</description>
@@ -359,7 +359,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_WorkTrance</hediffDef>
+                <hediffDef>EMP_WorkTrance</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -386,7 +386,7 @@
     <!--Psychic
     Pain Needle-->
     <AbilityDef ParentName="PsycastBase">
-        <defName>EP_PsychicPainNeedle</defName>
+        <defName>EMP_PsychicPainNeedle</defName>
         <label>psychic pain needle</label>
         <description>Agitate the pain pathways in the brain, causing a sharp pain sensation.</description>
         <level>2</level>
@@ -408,7 +408,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_PsychicPainNeedle</hediffDef>
+                <hediffDef>EMP_PsychicPainNeedle</hediffDef>
                 <onlyBrain>True</onlyBrain>
                 <psychic>True</psychic>
                 <goodwillImpact>-15</goodwillImpact>
@@ -424,7 +424,7 @@
     <!--Psychic
     Torment-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_PsychicTorment</defName>
+        <defName>EMP_PsychicTorment</defName>
         <label>psychic torment</label>
         <description>Create a painful psychic feedback loop within a target's brain that increases in distress caused until the psychic power burns itself out.</description>
         <level>4</level>
@@ -446,7 +446,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_PsychicTorment</hediffDef>
+                <hediffDef>EMP_PsychicTorment</hediffDef>
                 <onlyBrain>True</onlyBrain>
                 <psychic>True</psychic>
                 <goodwillImpact>-15</goodwillImpact>

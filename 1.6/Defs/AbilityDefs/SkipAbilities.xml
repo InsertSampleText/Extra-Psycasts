@@ -1,6 +1,6 @@
 <Defs>
 
-    <AbilityDef Name="EP_PsycastBaseSkipShoot" Abstract="True">
+    <AbilityDef Name="EMP_PsycastBaseSkipShoot" Abstract="True">
         <abilityClass>Psycast</abilityClass>
         <category>Skip</category>
         <statBases>
@@ -23,7 +23,7 @@
     <!--cold
     pinhole-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_ColdSpacePinhole</defName>
+        <defName>EMP_ColdSpacePinhole</defName>
         <label>cold space pinhole</label>
         <description>Generate a shielded microscopic skipgate to empty space. The sheer cold of the
             void drains heat from the surrounding area. The light of distant stars is enough to
@@ -47,7 +47,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_ColdSpacePinhole</thingDef>
+                <thingDef>EMP_ColdSpacePinhole</thingDef>
                 <allowOnBuildings>False</allowOnBuildings>
             </li>
             <li Class="CompProperties_AbilityEffecterOnTarget">
@@ -71,7 +71,7 @@
     <!--Grav
     Jump-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_GravJump</defName>
+        <defName>EMP_GravJump</defName>
         <label>grav jump</label>
         <description>Open tiny skipgates that shunts away a small amount of gravitons for a time,
             making the target lighter.</description>
@@ -107,7 +107,7 @@
 
     <!--GravField-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_GravField</defName>
+        <defName>EMP_GravField</defName>
         <label>grav field</label>
         <description>Open a thin spherical skipgate around the target. The gate skips away a small
             amount of gravitons, making the target lighter.</description>
@@ -147,7 +147,7 @@
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_GravField</hediffDef>
+                <hediffDef>EMP_GravField</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -161,7 +161,7 @@
     <!--Temperature
     Shield-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_TempBarrier</defName>
+        <defName>EMP_TempBarrier</defName>
         <label>temperature barrier</label>
         <description>Create a thin skipgate barrier that creates airflow around the target that
             helps insulate them, protecting against high and low temperatures.</description>
@@ -199,7 +199,7 @@
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_TempBarrier</hediffDef>
+                <hediffDef>EMP_TempBarrier</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -210,7 +210,7 @@
 
     <!--Fireball-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_Fireball</defName>
+        <defName>EMP_Fireball</defName>
         <label>fireball</label>
         <description>Skip a significant amount of combustible, fine, dust. Ignite the dust through
             compressed air and start a thermobaric explosion.</description>
@@ -234,7 +234,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_DustBomb</thingDef>
+                <thingDef>EMP_DustBomb</thingDef>
                 <allowOnBuildings>False</allowOnBuildings>
             </li>
 
@@ -259,7 +259,7 @@
 
     <!--Spark-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_Spark</defName>
+        <defName>EMP_Spark</defName>
         <label>spark</label>
         <description>A small amount of air and dust are gathered in a cylindrical skipgate then
             compressed. The rapid and adiabatic compression causes ignition. Lights fires on
@@ -281,7 +281,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_Spark</thingDef>
+                <thingDef>EMP_Spark</thingDef>
                 <allowOnBuildings>true</allowOnBuildings>
             </li>
 
@@ -308,7 +308,7 @@
     Throw-->
     <!--
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_RockThrow</defName>
+        <defName>EMP_RockThrow</defName>
         <label>rock throw</label>
         <description>Use skipgates to gather small rocks and launch them with gravitons.</description>
         <level>2</level>
@@ -357,7 +357,7 @@
     Throw-->
     <!--
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_ChunkThrow</defName>
+        <defName>EMP_ChunkThrow</defName>
         <label>chunk throw</label>
         <description>Use skipgates to gather a chunk and gravitons and launch it like a
     canonball.</description>
@@ -401,7 +401,7 @@
     <!--Static
     Burst-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_StaticBurst</defName>
+        <defName>EMP_StaticBurst</defName>
         <label>static burst</label>
         <description>Use skipgates to cause an in imbalance of electrical charges in an area,
             leading to a small electrical burst on target.</description>
@@ -426,7 +426,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_ElectroBurst</thingDef>
+                <thingDef>EMP_ElectroBurst</thingDef>
                 <allowOnBuildings>False</allowOnBuildings>
             </li>
 
@@ -451,7 +451,7 @@
     <!--Trap
     Skip-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_TrapSkip</defName>
+        <defName>EMP_TrapSkip</defName>
         <label>trap skip</label>
         <description>A patch of ground under the surface is skipped away and forms a small spikey
             pitfall. It cannot be placed next to other traps, and will collapse safely on its own
@@ -473,7 +473,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_PitTrap</thingDef>
+                <thingDef>EMP_PitTrap</thingDef>
                 <allowOnBuildings>false</allowOnBuildings>
             </li>
 
@@ -524,7 +524,7 @@
         <comps>
             <li Class="CompProperties_AbilitySpawn">
                 <goodwillImpact>-35</goodwillImpact>
-                <thingDef>EP_PsychicTornado</thingDef>
+                <thingDef>EMP_PsychicTornado</thingDef>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDef>FlashstormAreaEffect</fleckDef>
@@ -537,7 +537,7 @@
     <!--Static
     Discharge-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_StaticDischarge</defName>
+        <defName>EMP_StaticDischarge</defName>
         <label>static discharge</label>
         <description>Use skipgates to stack a bunch of positive charges on the target, then skipgate
             negative charges to release a discharge of electricity.</description>
@@ -575,11 +575,11 @@
     <!--Water
     Jet-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_WaterJet</defName>
+        <defName>EMP_WaterJet</defName>
         <label>water jet</label>
         <description>Open a skipgate deep underwater. The pressure difference will cause the water to jettison through the skipgate until it destabilizes, resulting in a high pressure water hose spewing forth.</description>
         <level>3</level>
-        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <iconPath>UI/Abilities/WaterJet</iconPath>
         <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <aiCanUse>true</aiCanUse>
@@ -596,11 +596,11 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="ExtraPsycasts.EP_CompProperties_AbilityWaterSpew">
+            <li Class="EvenMorePsycasts.EMP_CompProperties_AbilityWaterSpew">
                 <range>9.9</range>
                 <lineWidthEnd>2</lineWidthEnd>
                 <filthDef>Filth_Water</filthDef>
-                <effecterDef>Water_Spew</effecterDef>
+                <effecterDef>EMP_Water_Spew</effecterDef>
                 <canHitFilledCells>true</canHitFilledCells>
                 <damageDef>Blunt</damageDef>
                 <damAmount>15</damAmount>
@@ -610,11 +610,11 @@
 
     <!--Piercing Water-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_PiercingWater</defName>
+        <defName>EMP_PiercingWater</defName>
         <label>piercing water</label>
-        <description>Open a pinhole skipgate into a watery abyss. The high pressure difference will cause the water to jettison through the skipgate until it destabilizes, resulting in a high pressure water cutter.</description>
+        <description>Open a pinhole skipgate into a watery abyss and skip small abrasives within the water. The high pressure difference will cause the water and small abrasives to jettison through the skipgate until it destabilizes, resulting in a high pressure water cutter.</description>
         <level>4</level>
-        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <iconPath>UI/Abilities/WaterCutter</iconPath>
         <writeCombatLog>True</writeCombatLog>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <aiCanUse>true</aiCanUse>
@@ -631,11 +631,11 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="ExtraPsycasts.EP_CompProperties_AbilityWaterSpew">
+            <li Class="EvenMorePsycasts.EMP_CompProperties_AbilityWaterSpew">
                 <range>17.9</range>
                 <lineWidthEnd>1</lineWidthEnd>
                 <filthDef>Filth_Water</filthDef>
-                <effecterDef>Water_Spew2</effecterDef>
+                <effecterDef>EMP_Water_Spew2</effecterDef>
                 <canHitFilledCells>true</canHitFilledCells>
                 <damageDef>RangedStab</damageDef>
                 <damAmount>30</damAmount>
@@ -645,10 +645,40 @@
 
     <!--Lava
     Skip-->
+    <AbilityDef ParentName="PsycastBaseSkip">
+        <defName>EMP_LavaSkip</defName>
+        <label>lava skip</label>
+        <description>Skip lava above a target area, dealing severe burns and possibly starting a fire.</description>
+        <level>4</level>
+        <iconPath>UI/Abilities/WaterCutter</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
+        <statBases>
+            <Ability_EntropyGain>14</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.06</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>1</warmupTime>
+            <range>17.9</range>
+            <targetParams>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EvenMorePsycasts.EMP_CompProperties_AbilityLiquidSpew">
+                <range>17.9</range>
+                <lineWidthEnd>1</lineWidthEnd>
+                <filthDef>Filth_Water</filthDef>
+                <damageDef>fire</damageDef>
+                <damAmount>60</damAmount>
+            </li>
+        </comps>
+    </AbilityDef>
 
-
-    <!--Toxic
-    Spray-->
+    <!--Acid
+    Skip-->
 
 
     <!--Tox
@@ -658,7 +688,7 @@
     <!--Dust
     Skip-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_DustSkip</defName>
+        <defName>EMP_DustSkip</defName>
         <label>dust skip</label>
         <description>Skip dust particles up from under the ground surface into the eyes of the
             target, blinding and obscuring vision in a small area.</description>
@@ -702,7 +732,7 @@
 
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <hediffDef>EP_DustInEyes</hediffDef>
+                <hediffDef>EMP_DustInEyes</hediffDef>
                 <onlyBrain>false</onlyBrain>
                 <psychic>True</psychic>
                 <durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -713,7 +743,7 @@
 
     <!--Explosion-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_Explosion</defName>
+        <defName>EMP_Explosion</defName>
         <label>explosion</label>
         <description>Skip a lot of natural aerosol into the area, then create an ignition via
             compressed air. This creates a large thermobaric explosion.</description>
@@ -737,7 +767,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_AerosolBomb</thingDef>
+                <thingDef>EMP_AerosolBomb</thingDef>
                 <allowOnBuildings>False</allowOnBuildings>
             </li>
 
@@ -761,7 +791,7 @@
 
     <!--Annihilate-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_Annihilate</defName>
+        <defName>EMP_Annihilate</defName>
         <label>annihilate</label>
         <description>Skip a small grain of anti-matter. Destabilized by skipgates, it causes a
             small, but devastating release of energy.</description>
@@ -785,7 +815,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_AnnihilationBomb</thingDef>
+                <thingDef>EMP_AnnihilationBomb</thingDef>
                 <allowOnBuildings>False</allowOnBuildings>
             </li>
 
@@ -811,7 +841,7 @@
     <!--Small
     Wallraise-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_SmallWallraise</defName>
+        <defName>EMP_SmallWallraise</defName>
         <label>small wallraise</label>
         <description>Form a temporary, singular wall by skipping rubble and soil up from deep under
             the
@@ -931,7 +961,7 @@
     <!--Mud
     Skip-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_MudSkip</defName>
+        <defName>EMP_MudSkip</defName>
         <label>mud skip</label>
         <description>A patch of mud is skipped onto the target surface, which makes it harder to
             traverse. It will eventually break away or can be broken up manually.</description>
@@ -952,7 +982,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_SkippedMud</thingDef>
+                <thingDef>EMP_SkippedMud</thingDef>
                 <allowOnBuildings>false</allowOnBuildings>
             </li>
 
@@ -979,11 +1009,11 @@
 
     <!--Heavy Gravity Pinhole-->
     <AbilityDef ParentName="PsycastBaseSkip">
-        <defName>EP_HeavyGravityPinhole</defName>
+        <defName>EMP_HeavyGravityPinhole</defName>
         <label>heavy gravity pinhole</label>
         <description>A pinhole is opened to a large celestial body and skips the larger amounts of gravitons in to its surrounudings, creating increaesed gravity in the area.</description>
         <level>4</level>
-        <iconPath>UI/Abilities/ColdSpacePinhole</iconPath>
+        <iconPath>UI/Abilities/HeavyGravityPinhole</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
         <statBases>
@@ -1001,7 +1031,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilitySpawn">
-                <thingDef>EP_HeavyGravityPinhole</thingDef>
+                <thingDef>EMP_HeavyGravityPinhole</thingDef>
                 <allowOnBuildings>False</allowOnBuildings>
             </li>
             <li Class="CompProperties_AbilityEffecterOnTarget">

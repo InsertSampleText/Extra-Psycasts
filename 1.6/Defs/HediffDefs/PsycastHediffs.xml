@@ -2,7 +2,7 @@
 
     <!--Bolster Immunity-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_BolsterImmunity</defName>
+        <defName>EMP_BolsterImmunity</defName>
         <label>psychic immunity boost</label>
         <description>Psychically-induced immune system boost.</description>
         <isBad>false</isBad>
@@ -18,7 +18,7 @@
     <!--Bolster
     Clotting-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_BolsterClotting</defName>
+        <defName>EMP_BolsterClotting</defName>
         <label>psychic clotting boost</label>
         <description>Psychically-induced clotting boost.</description>
         <isBad>false</isBad>
@@ -32,7 +32,7 @@
     <!--Bolster
     Healing-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_BolsterHealing</defName>
+        <defName>EMP_BolsterHealing</defName>
         <label>psychic healing boost</label>
         <description>Psychically-induced healing boost.</description>
         <isBad>false</isBad>
@@ -46,7 +46,7 @@
     <!--Pain
     boost-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_PsychicPain</defName>
+        <defName>EMP_PsychicPain</defName>
         <label>psychic pain boost</label>
         <description>Psychically-induced increased pain sensitivity.</description>
         <isBad>false</isBad>
@@ -59,7 +59,7 @@
 
     <!--Unburden-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_UnBurden</defName>
+        <defName>EMP_UnBurden</defName>
         <label>psychic unburden</label>
         <description>Psychically-induced ease in locomotion.</description>
         <isBad>false</isBad>
@@ -78,7 +78,7 @@
     <!--Word
     of Happiness-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Happiness</defName>
+        <defName>EMP_Happiness</defName>
         <label>psychic happiness</label>
         <description>Psychically-induced feelings of happiness. Reduces the need for recreation.</description>
         <isBad>false</isBad>
@@ -94,7 +94,7 @@
     <!--Bleed
     Wounds-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_BleedWounds</defName>
+        <defName>EMP_BleedWounds</defName>
         <label>psychic wound bleed</label>
         <description>The ability to clot wounds is psychically weakened, leading to more bleeding.</description>
         <isBad>true</isBad>
@@ -109,7 +109,7 @@
     <!--Grav
     Field-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_GravField</defName>
+        <defName>EMP_GravField</defName>
         <label>psychic low grav field</label>
         <description>A thin skipgate that surrounds the target and creates a slightly lowers
             gravity, allowing for slightly faster movement due to being a slightly lighter weight.</description>
@@ -136,7 +136,7 @@
     <!--Temp
     Barrier-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_TempBarrier</defName>
+        <defName>EMP_TempBarrier</defName>
         <label>psychic temperature barrier</label>
         <description>A thin skipgate that surrounds the target and creates a layer of insulation
             with air
@@ -156,7 +156,7 @@
     <!--Word
     of Misery-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Misery</defName>
+        <defName>EMP_Misery</defName>
         <label>psychic misery</label>
         <description>Psychically-induced feelings of misery. Increases mental break threshold.</description>
         <isBad>false</isBad>
@@ -172,7 +172,7 @@
     <!--Word
     of Resolve-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Resolve</defName>
+        <defName>EMP_Resolve</defName>
         <label>psychic resolve</label>
         <description>Psychically-enhanced resolve. Decreases mental break threshold and global
             certaintity loss factor.</description>
@@ -191,7 +191,7 @@
     <!--Word
     of Doubt-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Doubt</defName>
+        <defName>EMP_Doubt</defName>
         <label>psychic doubt</label>
         <description>Psychically-induced doubt. Increases global certaintity loss factor.</description>
         <isBad>false</isBad>
@@ -209,7 +209,7 @@
     of Despair-->
     <!--
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Despair</defName>
+        <defName>EMP_Despair</defName>
         <label>psychic despair</label>
         <description>Psychically-induced despair. Increases global certaintity loss factor.</description>
         <isBad>false</isBad>
@@ -224,7 +224,7 @@
     -->
 
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Erudition</defName>
+        <defName>EMP_Erudition</defName>
         <label>psychic learning</label>
         <description>Parts of the brain are psychically stimulated, improving learning abilities.</description>
         <isBad>false</isBad>
@@ -239,7 +239,7 @@
     </HediffDef>
 
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Finesse</defName>
+        <defName>EMP_Finesse</defName>
         <label>psychic finesse</label>
         <description>The body's motor control and awareness are boosted.</description>
         <isBad>false</isBad>
@@ -264,7 +264,7 @@
     </HediffDef>
 
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Power</defName>
+        <defName>EMP_Power</defName>
         <label>psychic power</label>
         <description>The body's muscle strength and blood pumping are strengthened.</description>
         <isBad>false</isBad>
@@ -291,7 +291,7 @@
 
 
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_WorkTrance</defName>
+        <defName>EMP_WorkTrance</defName>
         <label>psychic work trance</label>
         <description>Undeer a minor flow state which lets them work more efficiently.</description>
         <isBad>false</isBad>
@@ -308,7 +308,7 @@
     <!--Word
     of Bloodthirst-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Bloodthirst</defName>
+        <defName>EMP_Bloodthirst</defName>
         <label>psychic bloodthirst</label>
         <description>Psychically-induced bloodthirst. Decreases mood and non-harm related works.
             Increases ability to harm.</description>
@@ -340,7 +340,7 @@
     <!--Word
     of Empathy-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_Empathy</defName>
+        <defName>EMP_Empathy</defName>
         <label>psychic empathy</label>
         <description>Psychically-induced enhanced empathy. Increases social skills, but makes more
             susceptible to mood falls.</description>
@@ -371,7 +371,7 @@
     <!--Dust
     Skip-->
     <HediffDef>
-        <defName>EP_DustInEyes</defName>
+        <defName>EMP_DustInEyes</defName>
         <label>dust</label>
         <labelNoun>dust</labelNoun>
         <description>Assortment of dust in the eyes. It impairs vision, but can be cleared in a few
@@ -401,7 +401,7 @@
     <!--Psychic
     Pain Needle-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_PsychicPainNeedle</defName>
+        <defName>EMP_PsychicPainNeedle</defName>
         <label>psychic pain needle</label>
         <description>Psychic agitation within the brain makes it feel like a needle is piercing
             through the skull.</description>
@@ -417,7 +417,7 @@
     <!--Psychic
     Torment-->
     <HediffDef ParentName="PsycastHediffBase">
-        <defName>EP_PsychicTorment</defName>
+        <defName>EMP_PsychicTorment</defName>
         <label>psychic torment</label>
         <description>A psychic feedback loop that will mount in effect until it burns itself out.</description>
         <hediffClass>HediffWithComps</hediffClass>
@@ -467,23 +467,33 @@
         </stages>
     </HediffDef>
 
-    <!--Heavy Gravity-->
+    <!--Heavy
+    Gravity-->
     <HediffDef>
-        <defName>EP_HeavyGravity</defName>
+        <defName>EMP_HeavyGravity</defName>
         <label>heavy gravity</label>
-        <hediffClass>ExtraPsycasts.EP_Hediff_HeavyGravity</hediffClass>
+        <hediffClass>EvenMorePsycasts.EMP_Hediff_HeavyGravity</hediffClass>
         <description>Under the effects of stronger gravity.</description>
         <isBad>true</isBad>
+        <!--
+        <initialSeverity>.1</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <alwaysShowSeverity>true</alwaysShowSeverity>
+        -->
+        <everCurableByItem>false</everCurableByItem>
         <stages>
             <li>
+                <!--
+                <minSeverity>1</minSeverity>
+                -->
                 <capMods>
                     <li>
                         <capacity>Moving</capacity>
-                        <offset>-.3</offset>
+                        <offset>-.5</offset>
                     </li>
                     <li>
                         <capacity>Manipulation</capacity>
-                        <offset>-.15</offset>
+                        <offset>-.25</offset>
                     </li>
                 </capMods>
                 <statOffsets>

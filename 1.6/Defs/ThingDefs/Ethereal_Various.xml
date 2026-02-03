@@ -2,7 +2,7 @@
 
     <!--cold pinhole-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_ColdSpacePinhole</defName>
+        <defName>EMP_ColdSpacePinhole</defName>
         <label>cold space pinhole</label>
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Normal</tickerType>
@@ -41,9 +41,9 @@
 
     <!--Heavy Gravity Pinhole-->
     <ThingDef ParentName="EtherealThingBase">
-        <defName>EP_HeavyGravityPinhole</defName>
+        <defName>EMP_HeavyGravityPinhole</defName>
         <label>heavy gravity pinhole</label>
-        <thingClass>ExtraPsycasts.EP_HeavyGravityPinhole</thingClass>
+        <thingClass>EvenMorePsycasts.EMP_HeavyGravityPinhole</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
         <drawOffscreen>true</drawOffscreen>
